@@ -1,0 +1,19 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+#odeslat {
+  width: 150px;
+}
+
+#popis-id {
+  width: 300px;
+  height: 100px;
+}
+
+.you,
+.them {
+  display: flex;
+  flex-direction: column;
+}

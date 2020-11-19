@@ -5,23 +5,16 @@ import './style.css';
 
 export const Form = () => {
   const [name, setName] = useState('');
-  const [surname, setSurname] = useState('');
-  const [city, setCity] = useState('');
   const [email, setEmail] = useState('');
   const [telephone, setTelephone] = useState('');
-  const [personType, setPersonType] = useState('1');
   const [name2, setName2] = useState('');
-  const [surname2, setSurname2] = useState('');
   const [street, setStreet] = useState('');
   const [streetNumDesc, setStreetNumDesc] = useState('');
   const [streetNumOrient, setStreetNumOrient] = useState('');
   const [city2, setCity2] = useState('');
-  const [email2, setEmail2] = useState('');
-  const [telephone2, setTelephone2] = useState('');
   const [description, setDescription] = useState('');
   const [helpType, setHelpType] = useState('');
   const [confirmation, setConfirmation] = useState(false);
-  const [datetime, setDatetime] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -29,43 +22,16 @@ export const Form = () => {
 
   return (
     <>
-      <form
-        className="form"
-        action="http://formular.itgirls.cz"
-        method="POST"
-        onChange={handleSubmit}
-      >
+      <form className="form" action="" method="POST" onChange={handleSubmit}>
         <div className="you">
           <h2>Údaje o vás</h2>
           <label htmlFor="jmeno-id">
-            Vaše jméno:
+            Vaše jméno a příjmení:
             <input
               id="jmeno-id"
-              name="first-name"
-              placeholder="Sem napište své jméno"
+              placeholder="Sem napište své jméno a příjmení"
               onChange={(e) => setName(e.target.value)}
               value={name}
-            />
-          </label>
-
-          <label htmlFor="prijmeni-id">
-            Vaše příjmení:
-            <input
-              id="prijmeni-id"
-              name="surname"
-              placeholder="Sem napište své příjmení:"
-              value={surname}
-              onChange={(e) => setSurname(e.target.value)}
-            />
-          </label>
-          <label htmlFor="mesto-id">
-            Město:{' '}
-            <input
-              type="text"
-              name="mesto"
-              id="mesto-id"
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
             />
           </label>
           <label htmlFor="email-id">
@@ -91,62 +57,22 @@ export const Form = () => {
         </div>
         <div className="them">
           <h2>Údaje o osobě, které chcete pomoct</h2>
-          <label htmlFor="typ-osoby-id">
-            Jedná se o:
-            <select
-              name="typ-osoby"
-              id="typ-osoby-id"
-              value={personType}
-              onChange={(e) => setPersonType(e.target.value)}
-            >
-              <option value="">Vyberte</option>
-              <option value="1">Jednotlivec</option>
-              <option value="2">Rodina</option>
-            </select>
-          </label>
           <label htmlFor="jmeno2-id">
-            Jméno:
+            Jméno a příjmení:
             <input
               id="jmeno2-id"
-              name="first-name"
               placeholder="Sem napište jméno osoby"
               value={name2}
               onChange={(e) => setName2(e.target.value)}
             />
           </label>
-
-          <label htmlFor="prijmeni2-id">
-            Příjmení:
-            <input
-              id="prijmeni2-id"
-              name="surname"
-              placeholder="Sem napište příjmení osoby:"
-              value={surname2}
-              onChange={(e) => setSurname2(e.target.value)}
-            />
-          </label>
-          <label htmlFor="ulice-id">
-            Ulice:{' '}
+          <label htmlFor="adresa-id">
+            Adresa:{' '}
             <input
               type="text"
-              name="ulice"
-              id="ulice-id"
+              id="adresa-id"
               value={street}
               onChange={(e) => setStreet(e.target.value)}
-            />
-          </label>
-          <label>
-            Číslo popisné/orientační:
-            <input
-              type="number"
-              value={streetNumDesc}
-              onChange={(e) => setStreetNumDesc(e.target.value)}
-            />{' '}
-            /{' '}
-            <input
-              type="number"
-              value={streetNumOrient}
-              onChange={(e) => setStreetNumOrient(e.target.value)}
             />
           </label>
           <label htmlFor="mesto2-id">
@@ -159,34 +85,12 @@ export const Form = () => {
               onChange={(e) => setCity2(e.target.value)}
             />
           </label>
-
-          <label htmlFor="email2-id">
-            E-mail (pokud má):{' '}
-            <input
-              type="email"
-              name="email"
-              id="email2-id"
-              value={email2}
-              onChange={(e) => setEmail2(e.target.value)}
-            />
-          </label>
-          <label htmlFor="telephone2-id">
-            Telefonní číslo:
-            <input
-              type="tel"
-              name="telephone"
-              id="telephone2-id"
-              value={telephone2}
-              onChange={(e) => setTelephone2(e.target.value)}
-            />
-          </label>
           <label htmlFor="popis-id">
             Popište, proč chcete dané osobě pomoci, v jaké situaci se osoba
             nachází a jakou formu pomoci by potřebovala:
           </label>
           <input
             type="text"
-            name="popis"
             id="popis-id"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
@@ -217,21 +121,7 @@ export const Form = () => {
             Osoba souhlasila s poskytnutím osobních informací v rámci projektu
             Ti Odvedle.
           </label>
-          <label htmlFor="file-id">
-            Sem nahrajte souhlas s poskytnutím informací.
-          </label>
-          <input type="file" name="file" id="file-id" />
         </div>
-        <label htmlFor="datum-id">
-          Dnešní datum:{' '}
-          <input
-            type="date"
-            name="datum"
-            id="datum-id"
-            value={datetime}
-            onChange={(e) => setDatetime(e.target.value)}
-          />
-        </label>
         <input
           type="submit"
           id="odeslat"

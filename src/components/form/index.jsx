@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './style.css';
+import { database } from '../../db.js';
 //údaje o vás: jméno, email, číslo
 //údaje o osobě: jméno, adresa, popis, kategorie, souhlas
 
@@ -8,6 +9,7 @@ export const Form = () => {
   const [email, setEmail] = useState('');
   const [telephone, setTelephone] = useState('');
   const [name2, setName2] = useState('');
+  const [age, setAge] = useState(0);
   const [street, setStreet] = useState('');
   const [city2, setCity2] = useState('');
   const [description, setDescription] = useState('');
@@ -16,11 +18,34 @@ export const Form = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    database.collection('people').add({
+      name: name,
+      email: email,
+      telephone: telephone,
+      name2: name2,
+      age: age,
+      street: street,
+      city2: city2,
+      description: description,
+      helpType: helpType,
+      confirmation: confirmation,
+    });
+    setName('');
+    setEmail('');
+    setTelephone('');
+    setName2('');
+    setAge(0);
+    setStreet('');
+    setCity2('');
+    setDescription('');
+    setHelpType('');
+    setConfirmation('')
   };
 
   return (
     <>
-      <form className="form" action="" method="POST" onChange={handleSubmit}>
+      <form className="form" action="" onSubmit={handleSubmit}>
         <div className="you">
           <h2>Údaje o vás</h2>
           <label htmlFor="jmeno-id">
@@ -62,6 +87,15 @@ export const Form = () => {
               placeholder="Sem napište jméno osoby"
               value={name2}
               onChange={(e) => setName2(e.target.value)}
+            />
+          </label>
+          <label htmlFor="age-id">
+            Věk:
+            <input
+              id="age-id"
+              placeholder="Sem napište věk osoby"
+              value={age}
+              onChange={(e) => setAge(e.target.value)}
             />
           </label>
           <label htmlFor="adresa-id">

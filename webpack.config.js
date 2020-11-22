@@ -1,4 +1,5 @@
 const path = require('path');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/index.jsx',
@@ -49,4 +50,30 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new CopyPlugin({
+      patterns: [
+        {
+          from: 'src/assets',
+          to: 'assets',
+          noErrorOnMissing: true,
+        },
+        {
+          from: 'src/img',
+          to: 'img',
+          noErrorOnMissing: true,
+        },
+        {
+          from: 'src/pages',
+          to: 'pages',
+          noErrorOnMissing: true,
+        },
+        {
+          from: 'src/styles',
+          to: 'styles',
+          noErrorOnMissing: true,
+        },
+      ],
+    }),
+  ],
 };

@@ -9,8 +9,6 @@ export const Form = () => {
   const [telephone, setTelephone] = useState('');
   const [name2, setName2] = useState('');
   const [street, setStreet] = useState('');
-  const [streetNumDesc, setStreetNumDesc] = useState('');
-  const [streetNumOrient, setStreetNumOrient] = useState('');
   const [city2, setCity2] = useState('');
   const [description, setDescription] = useState('');
   const [helpType, setHelpType] = useState('');

@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Catalogue } from './components/catalogue/index.jsx';
 import { Form } from './components/form/index.jsx';
+import { Map } from './components/map/index.jsx'
 import './index.html';
 
 const App = () => {
@@ -10,6 +11,7 @@ const App = () => {
       {/* tady bude mapa */}
       <Catalogue />
       <Form />
+      <Map />
     </>
   );
 };

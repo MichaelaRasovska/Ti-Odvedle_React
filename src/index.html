@@ -24,13 +24,13 @@
         <h1>Propojume ty, co chtějí pomáhát, s těmi, co potřebují pomoc.</h1>
         <p>Pomocí, která nic nestojí děláme Česko lepším místem pro život. </p>
         <div class="buttons__first-paragraph">
-        <button class="button__cta" href="./pages/jakpomahat/index.html">Chci pomáhat</button>
-        <button class="button__cta2" href="./pages/komupomoci/index.html">Vím komu pomoci</button>
+        <button class="button-main button__cta" href="./pages/jakpomahat/index.html">Chci pomáhat</button>
+        <button class="button-main button__cta2" href="./pages/komupomoci/index.html">Vím komu pomoci</button>
       </div>
     </div>
 
     <div class="layout__item layout__item--figure">
-        <img
+        <img class='imgMain'
           src="./img/house.svg"
           alt="obrázek lidí v domě navzájem si pomáhajících a povídajících"/>
       </div>
@@ -50,7 +50,7 @@
       </div>
 
       <div class="layout__item layout__item--figure">
-        <img src="./img/heart.svg" alt="obrázek dobrovolníků šířících dobro"/>
+        <img class='imgMain' src="./img/heart.svg" alt="obrázek dobrovolníků šířících dobro"/>
       </div>
     </div>
 
@@ -66,7 +66,7 @@
       </div>
 
       <div class="layout__item layout__item--figure">
-        <img src="./img/planet.svg" alt="dobrovolníci v oknech" />
+        <img class='imgMain' src="./img/planet.svg" alt="dobrovolníci v oknech" />
       </div>
     </div>
 
@@ -79,24 +79,22 @@
         konkrétní příklady a jakékoliv nejasnosti ohledně GDPR. Pojdme
         společně dělat Česko lepším místem pro život!
       </p>
-      <button id="button" href=./pages/vimkomupomoci.html>Přihlásit</button>
+      <button class='button-main' id="button" href=./pages/vimkomupomoci.html>Přihlásit</button>
     </div>
     <p class="map__item">Objevte naší interaktivní mapu a podívejte se kdo ve vašem okolí zrovna potřebuje pomoc:</p>
     <div id="app"></div>
-    <div class="map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d81965.33191945635!2d14.395584892879217!3d50.05975878528689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b939c0970798b%3A0x400af0f66164090!2sPrague!5e0!3m2!1sen!2scz!4v1605491211658!5m2!1sen!2scz" width="1000" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
     </div>
   </div>
-    <script src="/bundle.js"></script>
+    <footer>
+      <div class="footer">
+        <a class="footer__item-saying">Vytvořeno s 💚 v ČR.</a>
+        <a class="footer__item-copyright">Copyright ©2020 TiOdvedle.cz</a>
+        <a class="footer__item-illustrations" href="http://www.freepik.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Illustrations by pch.vector</a>
+      </div>
+      <script src="/bundle.js"></script>
+    </footer>
   </body>
-  <footer>
-    <div class="footer">
-      <a class="footer__item-saying">Vytvořeno s 💚 v ČR.</a>
-      <a class="footer__item-copyright">Copyright ©2020 TiOdvedle.cz</a>
-      <a class="footer__item-illustrations" href="http://www.freepik.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        >Illustrations by pch.vector</a>
-    </div>
-  </footer>
 </html>

@@ -12,11 +12,13 @@ module.exports = {
     contentBase: path.join(__dirname, 'dist'),
     writeToDisk: true,
   },
+  devtool: 'source-map',
   module: {
     rules: [
       {
         test: /\.jsx?$/,
         loader: 'babel-loader',
+        exclude: /node_modules/,
         query: {
           presets: ['@babel/preset-env', '@babel/preset-react'],
         },

@@ -40,7 +40,7 @@ export const Form = () => {
     setCity2('');
     setDescription('');
     setHelpType('');
-    setConfirmation('')
+    setConfirmation('');
   };
 
   return (
@@ -136,10 +136,10 @@ export const Form = () => {
               onChange={(e) => setHelpType(e.target.value)}
             >
               <option value="">Vyberte</option>
-              <option value="1">Materiální</option>
-              <option value="2">Fyzická pomoc</option>
-              <option value="3">Odvoz</option>
-              <option value="4">Jiné</option>
+              <option value="Materiální pomoc">Materiální pomoc</option>
+              <option value="Fyzická pomoc">Fyzická pomoc</option>
+              <option value="Odvoz">Odvoz</option>
+              <option value="Jiné">Jiné</option>
             </select>
           </label>
           <label htmlFor="confirmation-id">

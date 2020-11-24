@@ -9,11 +9,10 @@ const App = () => {
   return (
     <>
       <Form />
-      <p class="map__item">
+      <p className="map__item">
         Objevte naší interaktivní mapu a podívejte se kdo ve vašem okolí zrovna
         potřebuje pomoc:
       </p>
-      <Catalogue />
       <Map />
     </>
   );

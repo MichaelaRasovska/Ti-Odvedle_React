@@ -70,6 +70,8 @@ export const Form = ({ onRequestClose }) => {
     <>
       <div className="modal__backdrop">
         <div className="modal__container">
+          <h2>Tohle je formulář</h2>
+          <p>tady bude text</p>
           <form className="form" action="" onSubmit={handleSubmit}>
             <div className="inputs">
               <div className="you">

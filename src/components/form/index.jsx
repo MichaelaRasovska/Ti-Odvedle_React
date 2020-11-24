@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './style.css';
 import { database } from '../../db.js';
 //údaje o vás: jméno, email, číslo
 //údaje o osobě: jméno, adresa, popis, kategorie, souhlas
 
-export const Form = () => {
+export const Form = ({ onRequestClose }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [telephone, setTelephone] = useState('');
@@ -47,129 +47,156 @@ export const Form = () => {
     setConfirmation('');
   };
 
+  useEffect(() => {
+    function onKeyDown(event) {
+      if (event.keyCode === 27) {
+        onRequestClose();
+      }
+    }
+    {
+      /*
+    document.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', onKeyDown);
+    */
+    }
+
+    return () => {
+      document.body.style.overflow = 'visible';
+      document.removeEventListener('keydown', onKeyDown);
+    };
+  });
+
   return (
     <>
-      <form className="form" action="" onSubmit={handleSubmit}>
-        <div className="inputs">
-          <div className="you">
-            <h2>Údaje o vás</h2>
-            <label htmlFor="jmeno-id">
-              Vaše jméno a příjmení:
-              <input
-                id="jmeno-id"
-                placeholder="Sem napište své jméno a příjmení"
-                onChange={(e) => setName(e.target.value)}
-                value={name}
-              />
-            </label>
-            <label htmlFor="email-id">
-              Váš e-mail:{' '}
-              <input
-                type="email"
-                name="email"
-                id="email-id"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </label>
-            <label htmlFor="telephone-id">
-              Vaše telefonní číslo:
-              <input
-                type="tel"
-                name="telephone"
-                id="telephone-id"
-                value={telephone}
-                onChange={(e) => setTelephone(e.target.value)}
-              />
-            </label>
-          </div>
-          <div className="them">
-            <h2>Údaje o osobě, které chcete pomoct</h2>
-            <label htmlFor="jmeno2-id">
-              Jméno a příjmení:
-              <input
-                id="jmeno2-id"
-                placeholder="Sem napište jméno osoby"
-                value={name2}
-                onChange={(e) => setName2(e.target.value)}
-              />
-            </label>
-            <label htmlFor="age-id">
-              Věk:
-              <input
-                id="age-id"
-                placeholder="Sem napište věk osoby"
-                value={age}
-                onChange={(e) => setAge(e.target.value)}
-              />
-            </label>
-            <label htmlFor="adresa-id">
-              Adresa:{' '}
-              <input
-                type="text"
-                id="adresa-id"
-                value={street}
-                onChange={(e) => setStreet(e.target.value)}
-              />
-            </label>
-            <label htmlFor="mesto2-id">
-              Město:{' '}
-              <input
-                type="text"
-                name="mesto"
-                id="mesto2-id"
-                value={city2}
-                onChange={(e) => setCity2(e.target.value)}
-              />
-            </label>
-            <label htmlFor="popis-id">
-              Popište, proč chcete dané osobě pomoci, v jaké situaci se osoba
-              nachází a jakou formu pomoci by potřebovala:
-            </label>
-            <input
-              type="text"
-              id="popis-id"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-            />
-            <label htmlFor="typ-pomoci-id">
-              Jaký typ pomoci hledáte:
-              <select
-                name="typ-pomoci"
-                id="typ-pomoci-id"
-                value={helpType}
-                onChange={(e) => setHelpType(e.target.value)}
-              >
-                <option value="">Vyberte</option>
-                <option value="Materiální pomoc">Materiální pomoc</option>
-                <option value="Fyzická pomoc">Fyzická pomoc</option>
-                <option value="Odvoz">Odvoz</option>
-                <option value="Jiné">Jiné</option>
-              </select>
-            </label>
-            <label htmlFor="confirmation-id">
-              <input
-                type="checkbox"
-                name="confirmation"
-                id="confirmation-id"
-                checked={confirmation}
-                onChange={(e) => setConfirmation(e.target.checked)}
-              />
-              Osoba souhlasila s poskytnutím osobních informací v rámci projektu
-              Ti Odvedle.
-            </label>
-          </div>
+      <div className="modal__backdrop">
+        <div className="modal__container">
+          <form className="form" action="" onSubmit={handleSubmit}>
+            <div className="inputs">
+              <div className="you">
+                <h2>Údaje o vás</h2>
+                <label htmlFor="jmeno-id">
+                  Vaše jméno a příjmení:
+                  <input
+                    id="jmeno-id"
+                    placeholder="Sem napište své jméno a příjmení"
+                    onChange={(e) => setName(e.target.value)}
+                    value={name}
+                  />
+                </label>
+                <label htmlFor="email-id">
+                  Váš e-mail:{' '}
+                  <input
+                    type="email"
+                    name="email"
+                    id="email-id"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </label>
+                <label htmlFor="telephone-id">
+                  Vaše telefonní číslo:
+                  <input
+                    type="tel"
+                    name="telephone"
+                    id="telephone-id"
+                    value={telephone}
+                    onChange={(e) => setTelephone(e.target.value)}
+                  />
+                </label>
+              </div>
+              <div className="them">
+                <h2>Údaje o osobě, které chcete pomoct</h2>
+                <label htmlFor="jmeno2-id">
+                  Jméno a příjmení:
+                  <input
+                    id="jmeno2-id"
+                    placeholder="Sem napište jméno osoby"
+                    value={name2}
+                    onChange={(e) => setName2(e.target.value)}
+                  />
+                </label>
+                <label htmlFor="age-id">
+                  Věk:
+                  <input
+                    id="age-id"
+                    placeholder="Sem napište věk osoby"
+                    value={age}
+                    onChange={(e) => setAge(e.target.value)}
+                  />
+                </label>
+                <label htmlFor="adresa-id">
+                  Adresa:{' '}
+                  <input
+                    type="text"
+                    id="adresa-id"
+                    value={street}
+                    onChange={(e) => setStreet(e.target.value)}
+                  />
+                </label>
+                <label htmlFor="mesto2-id">
+                  Město:{' '}
+                  <input
+                    type="text"
+                    name="mesto"
+                    id="mesto2-id"
+                    value={city2}
+                    onChange={(e) => setCity2(e.target.value)}
+                  />
+                </label>
+                <label htmlFor="popis-id">
+                  Popište, proč chcete dané osobě pomoci, v jaké situaci se
+                  osoba nachází a jakou formu pomoci by potřebovala:
+                </label>
+                <input
+                  type="text"
+                  id="popis-id"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                />
+                <label htmlFor="typ-pomoci-id">
+                  Jaký typ pomoci hledáte:
+                  <select
+                    name="typ-pomoci"
+                    id="typ-pomoci-id"
+                    value={helpType}
+                    onChange={(e) => setHelpType(e.target.value)}
+                  >
+                    <option value="">Vyberte</option>
+                    <option value="Materiální pomoc">Materiální pomoc</option>
+                    <option value="Fyzická pomoc">Fyzická pomoc</option>
+                    <option value="Odvoz">Odvoz</option>
+                    <option value="Jiné">Jiné</option>
+                  </select>
+                </label>
+                <label htmlFor="confirmation-id">
+                  <input
+                    type="checkbox"
+                    name="confirmation"
+                    id="confirmation-id"
+                    checked={confirmation}
+                    onChange={(e) => setConfirmation(e.target.checked)}
+                  />
+                  Osoba souhlasila s poskytnutím osobních informací v rámci
+                  projektu Ti Odvedle.
+                </label>
+              </div>
+            </div>
+            <button
+              type="submit"
+              className="button-main"
+              onClick={(event) => {
+                if (!confirm('Opravdu chcete formulář odeslat?')) {
+                  event.preventDefault();
+                }
+              }}
+            >
+              Odeslat
+            </button>
+          </form>
+          <button onClick={onRequestClose}>Test zavření</button>{' '}
+          {/* onRequestClose je potřeba přiřadit k submit buttonu*/}
         </div>
-        <input
-          type="submit"
-          id="odeslat"
-          onClick={(event) => {
-            if (!confirm('Opravdu chcete formulář odeslat?')) {
-              event.preventDefault();
-            }
-          }}
-        />
-      </form>
+      </div>
     </>
   );
 };

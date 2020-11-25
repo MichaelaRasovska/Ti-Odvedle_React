@@ -9,7 +9,7 @@ import { seznamMapy } from '../map/seznamMapa.js';
 import { database } from '../../db.js';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import pinUrl from '../../img/pin.svg';
-import './style.css'
+import './style.css';
 
 export const Map = () => {
   const [viewport, setViewport] = useState({

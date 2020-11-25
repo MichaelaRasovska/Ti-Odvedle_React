@@ -7,7 +7,6 @@ import './index.html';
 const App = () => {
   const [isModalOpen, setModalIsOpen] = useState(false);
 
-  console.log(useState('hello')[1]);
   const toggleModal = () => {
     setModalIsOpen(!isModalOpen);
   };
@@ -23,7 +22,7 @@ const App = () => {
           konkrétní příklady a jakékoliv nejasnosti ohledně GDPR. Pojdme
           společně dělat Česko lepším místem pro život!
         </p>
-        <button className="button-main" id="button" onClick={toggleModal}>
+        <button className="button-main" onClick={toggleModal}>
           Přihlásit
         </button>
       </div>

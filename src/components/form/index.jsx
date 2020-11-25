@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
 import { database } from '../../db.js';
-//údaje o vás: jméno, email, číslo
-//údaje o osobě: jméno, adresa, popis, kategorie, souhlas
 
 export const Form = ({ onRequestClose }) => {
   const [name, setName] = useState('');
@@ -11,8 +9,8 @@ export const Form = ({ onRequestClose }) => {
   const [name2, setName2] = useState('');
   const [age, setAge] = useState(0);
   const [street, setStreet] = useState('');
-  const [latitude, setLatitude] = useState(0);
-  const [longitude, setLongitude] = useState(0);
+  //const [latitude, setLatitude] = useState(0);
+  //const [longitude, setLongitude] = useState(0);
   const [city2, setCity2] = useState('');
   const [description, setDescription] = useState('');
   const [helpType, setHelpType] = useState('');
@@ -71,30 +69,27 @@ export const Form = ({ onRequestClose }) => {
             <div className="inputs">
               <div className="you">
                 <h2>Údaje o vás</h2>
-                <label htmlFor="jmeno-id">
+                <label>
                   Vaše jméno a příjmení:
                   <input
                     id="jmeno-id"
-                    placeholder="Sem napište své jméno a příjmení"
                     onChange={(e) => setName(e.target.value)}
                     value={name}
                   />
                 </label>
-                <label htmlFor="email-id">
+                <label>
                   Váš e-mail:{' '}
                   <input
                     type="email"
-                    name="email"
                     id="email-id"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </label>
-                <label htmlFor="telephone-id">
+                <label>
                   Vaše telefonní číslo:
                   <input
                     type="tel"
-                    name="telephone"
                     id="telephone-id"
                     value={telephone}
                     onChange={(e) => setTelephone(e.target.value)}
@@ -103,25 +98,23 @@ export const Form = ({ onRequestClose }) => {
               </div>
               <div className="them">
                 <h2>Údaje o osobě, které chcete pomoct</h2>
-                <label htmlFor="jmeno2-id">
+                <label>
                   Jméno a příjmení:
                   <input
                     id="jmeno2-id"
-                    placeholder="Sem napište jméno osoby"
                     value={name2}
                     onChange={(e) => setName2(e.target.value)}
                   />
                 </label>
-                <label htmlFor="age-id">
+                <label>
                   Věk:
                   <input
                     id="age-id"
-                    placeholder="Sem napište věk osoby"
                     value={age}
                     onChange={(e) => setAge(e.target.value)}
                   />
                 </label>
-                <label htmlFor="adresa-id">
+                <label>
                   Adresa:{' '}
                   <input
                     type="text"
@@ -130,11 +123,10 @@ export const Form = ({ onRequestClose }) => {
                     onChange={(e) => setStreet(e.target.value)}
                   />
                 </label>
-                <label htmlFor="mesto2-id">
-                  Město:{' '}
+                <label>
+                  Město:
                   <input
                     type="text"
-                    name="mesto"
                     id="mesto2-id"
                     value={city2}
                     onChange={(e) => setCity2(e.target.value)}
@@ -150,10 +142,9 @@ export const Form = ({ onRequestClose }) => {
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                 />
-                <label htmlFor="typ-pomoci-id">
+                <label>
                   Jaký typ pomoci hledáte:
                   <select
-                    name="typ-pomoci"
                     id="typ-pomoci-id"
                     value={helpType}
                     onChange={(e) => setHelpType(e.target.value)}
@@ -168,7 +159,6 @@ export const Form = ({ onRequestClose }) => {
                 <label>
                   <input
                     type="checkbox"
-                    name="confirmation"
                     id="confirmation-id"
                     checked={confirmation}
                     onChange={(e) => setConfirmation(e.target.checked)}
@@ -178,17 +168,6 @@ export const Form = ({ onRequestClose }) => {
                 </label>
               </div>
             </div>
-            {/*<button
-              type="submit"
-              className="button-main"
-              onClick={(event) => {
-                if (!confirm('Opravdu chcete formulář odeslat?')) {
-                  handleSubmit();
-                  onRequestClose();                }
-              }}
-            >
-              Odeslat
-            </button>*/}
           </form>
           <button
             className="button-main"

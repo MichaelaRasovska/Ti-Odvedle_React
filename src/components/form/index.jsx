@@ -18,9 +18,7 @@ export const Form = ({ onRequestClose }) => {
   const [helpType, setHelpType] = useState('');
   const [confirmation, setConfirmation] = useState(false);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
+  const handleSubmit = () => {
     database.collection('people').add({
       name: name,
       email: email,
@@ -53,12 +51,9 @@ export const Form = ({ onRequestClose }) => {
         onRequestClose();
       }
     }
-    {
-      /*
+
     document.body.style.overflow = 'hidden';
     document.addEventListener('keydown', onKeyDown);
-    */
-    }
 
     return () => {
       document.body.style.overflow = 'visible';
@@ -72,7 +67,7 @@ export const Form = ({ onRequestClose }) => {
         <div className="modal__container">
           <h2>Tohle je formulář</h2>
           <p>tady bude text</p>
-          <form className="form" action="" onSubmit={handleSubmit}>
+          <form className="form">
             <div className="inputs">
               <div className="you">
                 <h2>Údaje o vás</h2>
@@ -170,7 +165,7 @@ export const Form = ({ onRequestClose }) => {
                     <option value="Jiné">Jiné</option>
                   </select>
                 </label>
-                <label htmlFor="confirmation-id">
+                <label>
                   <input
                     type="checkbox"
                     name="confirmation"
@@ -183,20 +178,30 @@ export const Form = ({ onRequestClose }) => {
                 </label>
               </div>
             </div>
-            <button
+            {/*<button
               type="submit"
               className="button-main"
               onClick={(event) => {
                 if (!confirm('Opravdu chcete formulář odeslat?')) {
-                  event.preventDefault();
-                }
+                  handleSubmit();
+                  onRequestClose();                }
               }}
             >
               Odeslat
-            </button>
+            </button>*/}
           </form>
-          <button onClick={onRequestClose}>Test zavření</button>{' '}
-          {/* onRequestClose je potřeba přiřadit k submit buttonu*/}
+          <button
+            className="button-main"
+            onClick={(e) => {
+              e.preventDefault();
+              if (confirm('Opravdu chcete formulář odeslat?')) {
+                handleSubmit();
+                onRequestClose();
+              }
+            }}
+          >
+            Odeslat
+          </button>
         </div>
       </div>
     </>

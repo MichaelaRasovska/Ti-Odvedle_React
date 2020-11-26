@@ -39,3 +39,12 @@
   padding: 15px;
   width: 560px;
 }
+
+.cross {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  margin-left: 98%;
+}

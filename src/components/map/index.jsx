@@ -74,38 +74,31 @@ export const Map = () => {
             <NavigationControl />
             <GeolocateControl />
           </div>
-          {
-            /*peopleData.filter((person) => {
-              if (person.helpType === filter) {
-                return true;
-              }
-            })*/
-            dataFiltered.map((person) => {
-              return (
-                <Marker
-                  key={person.id}
-                  latitude={person.latitude}
-                  longitude={person.longitude}
-                  offsetTop={-30}
-                  offsetLeft={-30}
+          {dataFiltered.map((person) => {
+            return (
+              <Marker
+                key={person.id}
+                latitude={person.latitude}
+                longitude={person.longitude}
+                offsetTop={-30}
+                offsetLeft={-30}
+              >
+                <button
+                  onClick={() =>
+                    setPopupData({
+                      latitude: person.latitude,
+                      longitude: person.longitude,
+                      name2: person.name2,
+                      description: person.description,
+                    })
+                  }
+                  className="button-map"
                 >
-                  <button
-                    onClick={() =>
-                      setPopupData({
-                        latitude: person.latitude,
-                        longitude: person.longitude,
-                        name2: person.name2,
-                        description: person.description,
-                      })
-                    }
-                    className="button-map"
-                  >
-                    <img src={pinUrl} alt="Špendlík" />
-                  </button>
-                </Marker>
-              );
-            })
-          }
+                  <img src={pinUrl} alt="Špendlík" />
+                </button>
+              </Marker>
+            );
+          })}
 
           {popupData !== null && (
             <Popup

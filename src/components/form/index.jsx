@@ -63,12 +63,15 @@ export const Form = ({ onRequestClose }) => {
     <>
       <div className="modal__backdrop">
         <div className="modal__container">
+          <button className="cross" onClick={onRequestClose}>
+            x
+          </button>
           <h2>Tohle je formulář</h2>
           <p>tady bude text</p>
           <form className="form">
             <div className="inputs">
               <div className="you">
-                <h2>Údaje o vás</h2>
+                <h3>Údaje o vás</h3>
                 <label>
                   Vaše jméno a příjmení:
                   <input
@@ -97,7 +100,7 @@ export const Form = ({ onRequestClose }) => {
                 </label>
               </div>
               <div className="them">
-                <h2>Údaje o osobě, které chcete pomoct</h2>
+                <h3>Údaje o osobě, které chcete pomoct</h3>
                 <label>
                   Jméno a příjmení:
                   <input
@@ -181,6 +184,7 @@ export const Form = ({ onRequestClose }) => {
           >
             Odeslat
           </button>
+          <button className="button-main" onClick={onRequestClose}>Zavřít</button>
         </div>
       </div>
     </>

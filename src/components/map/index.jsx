@@ -24,6 +24,10 @@ export const Map = () => {
 
   const [filter, setFilter] = useState('');
 
+  const dataFiltered = filter
+    ? peopleData.filter((person) => person.helpType === filter)
+    : peopleData;
+
   useEffect(() => {
     return database.collection('people').onSnapshot((query) => {
       setPeopleData(
@@ -70,13 +74,13 @@ export const Map = () => {
             <NavigationControl />
             <GeolocateControl />
           </div>
-          {peopleData
-            .filter((person) => {
+          {
+            /*peopleData.filter((person) => {
               if (person.helpType === filter) {
                 return true;
               }
-            })
-            .map((person) => {
+            })*/
+            dataFiltered.map((person) => {
               return (
                 <Marker
                   key={person.id}
@@ -100,7 +104,8 @@ export const Map = () => {
                   </button>
                 </Marker>
               );
-            })}
+            })
+          }
 
           {popupData !== null && (
             <Popup

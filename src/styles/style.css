@@ -222,16 +222,29 @@ h2 {
   vertical-align: middle;
 }
 
-.imgMain__1 {
+.imgMain__house {
   transform: scale(2.2) translate(95px);
   transform-origin: right;
   position: relative;
   z-index: -1;
 }
 
-/* .layout__item * + * {
+.imgMain__heart {
+  transform: scale(2.2) translate(25px);
+  transform-origin: left;
+  position: relative;
+  z-index: -1;
+}
+
+.imgMain__planet {
+  transform: scale(2.2) translate(45px);
+  transform-origin: right;
+  position: relative;
+  z-index: -1;
+}
+.layout__item * + * {
   margin-top: 1em;
-} */
+}
 
 .logo {
   width: 300px;

@@ -174,8 +174,13 @@ h2 {
   }
 }
 
+/* .full-bleed__wave {
+  background: url(img/waview.svg);
+  width: max-content;
+} */
+
 .full-bleed {
-  background-image: linear-gradient(to right, #dde8fd, #93b3f4);
+  background: linear-gradient(to right, #dde8fd, #a3daf6, #77a4e5);
   display: inline-block;
   align-items: center;
   text-align: center;
@@ -186,6 +191,7 @@ h2 {
   margin-left: -50vw;
   margin-right: -50vw;
   padding: 3.5rem;
+  bottom: -10.5rem;
 }
 
 .map {
@@ -194,10 +200,11 @@ h2 {
   text-align: center;
   margin-top: 40px;
 }
-.item__map {
+.map__item {
   display: flex;
   align-items: center;
   text-align: center;
+  margin-top: 150px;
 }
 
 body {
@@ -220,24 +227,26 @@ h2 {
   width: 600px;
   height: auto;
   vertical-align: middle;
+  bottom: 2.5rem;
+  top: 2.5 rem;
 }
 
 .imgMain__house {
-  transform: scale(2.2) translate(95px);
+  transform: scale(2.1) translate(95px);
   transform-origin: right;
   position: relative;
   z-index: -1;
 }
 
 .imgMain__heart {
-  transform: scale(2.2) translate(25px);
+  transform: scale(2.1) translate(25px);
   transform-origin: left;
   position: relative;
   z-index: -1;
 }
 
 .imgMain__planet {
-  transform: scale(2.2) translate(45px);
+  transform: scale(2.1) translate(45px);
   transform-origin: right;
   position: relative;
   z-index: -1;

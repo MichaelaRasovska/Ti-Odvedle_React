@@ -146,7 +146,7 @@ h2 {
   flex-direction: row-reverse;
 }
 .layout__item {
-  padding-top: 1em;
+  padding-top: 2em;
   padding-left: 3.5em;
 }
 .layout__item--body {
@@ -228,7 +228,7 @@ h2 {
   height: auto;
   vertical-align: middle;
   bottom: 2.5rem;
-  top: 2.5 rem;
+  top: 1 rem;
 }
 
 .imgMain__house {

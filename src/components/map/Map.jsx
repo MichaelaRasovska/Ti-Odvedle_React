@@ -57,7 +57,7 @@ export const Map = () => {
           </select>
         </label>
       </div>
-      <div className="map">
+      <div id="map" className="map">
         <ReactMapGL
           {...viewport}
           /* alternativa k: latitude={viewport.latitude}

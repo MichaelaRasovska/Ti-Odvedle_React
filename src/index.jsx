@@ -22,8 +22,11 @@ const App = () => {
 
   return (
     <>
-      <Notification text={notificationText} />
-      <div id="full-bleed" className="full-bleed">
+      <Notification
+        text={notificationText}
+        onNotificationClose={() => setNotificationText('')}
+      />
+      <section id="full-bleed" className="full-bleed">
         <h2 className="heading-form">Vím komu pomoci</h2>
         <p>
           Vítě o někom kdo potřebuje pomoc? Skvěle! Rovnou je přihlašte. Pokud
@@ -33,15 +36,18 @@ const App = () => {
           společně dělat Česko lepším místem pro život!
         </p>
         <button id="sign" className="button-main" onClick={toggleModal}>
-          Přihlásit
+          Vyžádat pomoc
         </button>
-      </div>
-      {isModalOpen && <Form onFormClose={onFormClose} />}
-      <p id="map-item" className="map__item">
-        Objevte naší interaktivní mapu a podívejte se kdo ve vašem okolí zrovna
-        potřebuje pomoc:
-      </p>
-      <Map />
+        {isModalOpen && <Form onFormClose={onFormClose} />}
+      </section>
+      <section className="map-section">
+        <h2>Chci pomoct</h2>
+        <p id="map-item" className="map__item">
+          Objevte naší interaktivní mapu a podívejte se kdo ve vašem okolí
+          zrovna potřebuje pomoc:
+        </p>
+        <Map />
+      </section>
     </>
   );
 };

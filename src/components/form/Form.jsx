@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './style.css';
+import './Form.css';
 import { database } from '../../db.js';
 import { Input } from './components/Input.jsx';
 

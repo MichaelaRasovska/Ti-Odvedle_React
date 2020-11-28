@@ -1,0 +1,8 @@
+.button-map {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  display: flex;
+  cursor: pointer;
+  outline: none;
+}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { render } from 'react-dom';
-import { Form } from './components/form/index.jsx';
-import { Map } from './components/map/index.jsx';
+import { Form } from './components/form/Form.jsx';
+import { Map } from './components/map/Map.jsx';
 import './index.html';
 
 const App = () => {

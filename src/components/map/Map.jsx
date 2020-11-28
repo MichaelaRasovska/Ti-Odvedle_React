@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import ReactMapGL, {
   GeolocateControl,
-  Marker,
   NavigationControl,
   Popup,
 } from 'react-map-gl';
-import { seznamMapy } from '../map/seznamMapa.js';
+import { seznamMapy } from './seznamMapa.js';
 import { database } from '../../db.js';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import pinUrl from '../../img/pin.svg';
-import './style.css';
+import './Map.css';
+import { Marker } from './components/Marker.jsx';
 
 export const Map = () => {
   const [viewport, setViewport] = useState({
@@ -75,29 +74,7 @@ export const Map = () => {
             <GeolocateControl />
           </div>
           {dataFiltered.map((person) => {
-            return (
-              <Marker
-                key={person.id}
-                latitude={person.latitude}
-                longitude={person.longitude}
-                offsetTop={-30}
-                offsetLeft={-30}
-              >
-                <button
-                  onClick={() =>
-                    setPopupData({
-                      latitude: person.latitude,
-                      longitude: person.longitude,
-                      name2: person.name2,
-                      description: person.description,
-                    })
-                  }
-                  className="button-map"
-                >
-                  <img src={pinUrl} alt="Špendlík" />
-                </button>
-              </Marker>
-            );
+            return <Marker person={person} setPopupData={setPopupData} />;
           })}
 
           {popupData !== null && (
@@ -106,8 +83,14 @@ export const Map = () => {
               longitude={popupData.longitude}
               onClose={() => setPopupData(null)}
             >
-              <h1>{popupData.name2}</h1>
-              <p>{popupData.description}</p>
+              <div className="popup">
+                <h3>{popupData.name2}</h3>
+                <p>{popupData.description}</p>
+                <p>
+                  Máte zájem pomoct {popupData.name2} ? Kontaktujte nás na email
+                  info@tiodvedle.cz s ID {popupData.id}
+                </p>
+              </div>
             </Popup>
           )}
         </ReactMapGL>

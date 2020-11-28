@@ -2,46 +2,35 @@ import React, { useState, useEffect } from 'react';
 import './Form.css';
 import { database } from '../../db.js';
 import { Input } from './components/Input.jsx';
+import { getCoordinates } from './getCoordinates';
+
+const defaultData = {
+  name: '',
+  email: '',
+  telephone: '',
+  name2: '',
+  age: '',
+  street: '',
+  city2: '',
+  description: '',
+  helpType: '',
+  confirmation: false,
+};
 
 export const Form = ({ onRequestClose }) => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [telephone, setTelephone] = useState('');
-  const [name2, setName2] = useState('');
-  const [age, setAge] = useState('');
-  const [street, setStreet] = useState('');
-  //const [latitude, setLatitude] = useState(0);
-  //const [longitude, setLongitude] = useState(0);
-  const [city2, setCity2] = useState('');
-  const [description, setDescription] = useState('');
-  const [helpType, setHelpType] = useState('');
-  const [confirmation, setConfirmation] = useState(false);
-  
-  const handleSubmit = () => {
+  const [formData, setFormData] = useState(defaultData);
+
+  const handleSubmit = async () => {
+    const coordinates = await getCoordinates(street, city2);
+
     database.collection('people').add({
-      name: name,
-      email: email,
-      telephone: telephone,
-      name2: name2,
-      age: age,
-      street: street,
-      latitude: 0,
-      longitude: 0,
-      city2: city2,
-      description: description,
-      helpType: helpType,
-      confirmation: confirmation,
+      ...formData,
+      latitude: coordinates[1],
+      longitude: coordinates[0],
     });
-    setName('');
-    setEmail('');
-    setTelephone('');
-    setName2('');
-    setAge('');
-    setStreet('');
-    setCity2('');
-    setDescription('');
-    setHelpType('');
-    setConfirmation('');
+
+    setFormData(defaultData);
+    onRequestClose();
   };
 
   useEffect(() => {
@@ -75,20 +64,22 @@ export const Form = ({ onRequestClose }) => {
                 <h3>Údaje o vás</h3>
                 <Input
                   title="Vaše jméno a příjmení"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  value={formData.name}
+                  onChange={(name) => setFormData({ ...formData, name })}
                 />
                 <Input
                   title="Váš e-mail:"
                   type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  value={formData.email}
+                  onChange={(email) => setFormData({ ...formData, email })}
                 />
                 <Input
                   title="Vaše telefonní číslo:"
                   type="tel"
-                  value={telephone}
-                  onChange={(e) => setTelephone(e.target.value)}
+                  value={formData.telephone}
+                  onChange={(telephone) =>
+                    setFormData({ ...formData, telephone })
+                  }
                 />
               </div>
 
@@ -96,36 +87,40 @@ export const Form = ({ onRequestClose }) => {
                 <h3>Údaje o osobě, které chcete pomoct</h3>
                 <Input
                   title="Jméno a příjmení:"
-                  value={name2}
-                  onChange={(e) => setName2(e.target.value)}
+                  value={formData.name2}
+                  onChange={(name2) => setFormData({ ...formData, name2 })}
                 />
                 <Input
                   title="Věk"
-                  value={age}
-                  onChange={(e) => setAge(e.target.value)}
+                  value={formData.age}
+                  onChange={(age) => setFormData({ ...formData, age })}
                 />
                 <Input
                   title="Adresa"
-                  value={street}
-                  onChange={(e) => setStreet(e.target.value)}
+                  value={formData.street}
+                  onChange={(street) => setFormData({ ...formData, street })}
                 />
                 <Input
                   title="Město"
-                  value={city2}
-                  onChange={(e) => setCity2(e.target.value)}
+                  value={formData.city2}
+                  onChange={(city2) => setFormData({ ...formData, city2 })}
                 />
                 <Input
                   title="Popište, proč chcete dané osobě pomoci, v jaké situaci se
                   osoba nachází a jakou formu pomoci by potřebovala:"
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
+                  value={formData.description}
+                  onChange={(description) =>
+                    setFormData({ ...formData, description })
+                  }
                 />
                 <label>
                   Jaký typ pomoci hledáte:
                   <select
                     id="typ-pomoci-id"
-                    value={helpType}
-                    onChange={(e) => setHelpType(e.target.value)}
+                    value={formData.helpType}
+                    onChange={(helpType) =>
+                      setFormData({ ...formData, helpType })
+                    }
                   >
                     <option value="">Vyberte</option>
                     <option value="Materiální pomoc">Materiální pomoc</option>
@@ -138,8 +133,10 @@ export const Form = ({ onRequestClose }) => {
                   <input
                     type="checkbox"
                     id="confirmation-id"
-                    checked={confirmation}
-                    onChange={(e) => setConfirmation(e.target.checked)}
+                    checked={formData.confirmation}
+                    onChange={(confirmation) =>
+                      setFormData({ ...formData, confirmation })
+                    }
                   />
                   Osoba souhlasila s poskytnutím osobních informací v rámci
                   projektu Ti Odvedle.
@@ -153,7 +150,6 @@ export const Form = ({ onRequestClose }) => {
               e.preventDefault();
               if (confirm('Opravdu chcete formulář odeslat?')) {
                 handleSubmit();
-                onRequestClose();
               }
             }}
           >

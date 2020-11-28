@@ -24,7 +24,7 @@ const App = () => {
     <>
       <Notification text={notificationText} />
       <div id="full-bleed" className="full-bleed">
-        <h2>Vím komu pomoci</h2>
+        <h2 className="heading-form">Vím komu pomoci</h2>
         <p>
           Vítě o někom kdo potřebuje pomoc? Skvěle! Rovnou je přihlašte. Pokud
           si nebudete čímkoliv jistí projděte si naše FAQ - kde se dozvíte, jak

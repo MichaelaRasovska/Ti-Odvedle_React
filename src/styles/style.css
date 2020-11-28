@@ -5,8 +5,9 @@ body {
   max-width: 64em;
   margin-right: auto;
   margin-left: auto;
-  padding: 3em 1em;
   line-height: 1.5em;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
@@ -69,6 +70,7 @@ a {
   height: 50px;
   width: 160px;
   margin: 0 40px 0 16px;
+  background-color: #99ca6a;
 }
 
 .buttons__first-paragraph {
@@ -104,8 +106,22 @@ a {
   width: 400px;
 }
 
-h1,
-h2 {
+.heading-h1 {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  line-height: normal;
+}
+
+.heading-help,
+.heading-project {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  line-height: normal;
+}
+
+.heading-form {
   display: flex;
   justify-content: center;
   align-items: center;

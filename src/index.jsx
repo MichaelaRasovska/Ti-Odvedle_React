@@ -7,14 +7,22 @@ import { Notification } from './components/notification/Notification.jsx';
 
 const App = () => {
   const [isModalOpen, setModalIsOpen] = useState(false);
+  const [notificationText, setNotificationText] = useState('');
 
   const toggleModal = () => {
     setModalIsOpen(!isModalOpen);
   };
 
+  const onFormClose = (showNotification) => {
+    setModalIsOpen(!isModalOpen);
+    if (showNotification === true) {
+      setNotificationText('Děkujeme! Váš formulář byl odeslán.');
+    }
+  };
+
   return (
     <>
-      <Notification text="Děkujeme! Váš formulář byl odeslán." />
+      <Notification text={notificationText} />
       <div id="full-bleed" className="full-bleed">
         <h2>Vím komu pomoci</h2>
         <p>
@@ -28,7 +36,7 @@ const App = () => {
           Přihlásit
         </button>
       </div>
-      {isModalOpen && <Form onRequestClose={toggleModal} />}
+      {isModalOpen && <Form onFormClose={onFormClose} />}
       <p id="map-item" className="map__item">
         Objevte naší interaktivní mapu a podívejte se kdo ve vašem okolí zrovna
         potřebuje pomoc:

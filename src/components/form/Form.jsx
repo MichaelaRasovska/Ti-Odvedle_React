@@ -17,7 +17,7 @@ const defaultData = {
   confirmation: false,
 };
 
-export const Form = ({ onRequestClose }) => {
+export const Form = ({ onFormClose }) => {
   const [formData, setFormData] = useState(defaultData);
 
   const handleSubmit = async () => {
@@ -30,13 +30,13 @@ export const Form = ({ onRequestClose }) => {
     });
 
     setFormData(defaultData);
-    onRequestClose();
+    onFormClose(true);
   };
 
   useEffect(() => {
     function onKeyDown(event) {
       if (event.keyCode === 27) {
-        onRequestClose();
+        onFormClose();
       }
     }
 
@@ -53,7 +53,7 @@ export const Form = ({ onRequestClose }) => {
     <>
       <div className="modal__backdrop">
         <div className="modal__container">
-          <button className="cross" onClick={onRequestClose}>
+          <button className="cross" onClick={onFormClose}>
             x
           </button>
           <h2>Tohle je formulář</h2>
@@ -170,7 +170,7 @@ export const Form = ({ onRequestClose }) => {
           >
             Odeslat
           </button>
-          <button className="button-main" onClick={onRequestClose}>
+          <button className="button-main" onClick={onFormClose}>
             Zavřít
           </button>
         </div>

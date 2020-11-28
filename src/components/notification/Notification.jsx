@@ -9,4 +9,5 @@ export const Notification = ({ text }) => {
       </div>
     );
   }
+  return null;
 };

@@ -16,7 +16,7 @@ export const Form = ({ onRequestClose }) => {
   const [description, setDescription] = useState('');
   const [helpType, setHelpType] = useState('');
   const [confirmation, setConfirmation] = useState(false);
-
+  
   const handleSubmit = () => {
     database.collection('people').add({
       name: name,
@@ -36,7 +36,7 @@ export const Form = ({ onRequestClose }) => {
     setEmail('');
     setTelephone('');
     setName2('');
-    setAge(0);
+    setAge('');
     setStreet('');
     setCity2('');
     setDescription('');

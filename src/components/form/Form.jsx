@@ -3,6 +3,7 @@ import './Form.css';
 import { database } from '../../db.js';
 import { Input } from './components/Input.jsx';
 import { getCoordinates } from './getCoordinates';
+import { ageValidation, emailValidation } from './validations.js';
 
 const defaultData = {
   name: '',
@@ -19,6 +20,7 @@ const defaultData = {
 
 export const Form = ({ onFormClose }) => {
   const [formData, setFormData] = useState(defaultData);
+  const [isFormValid, setIsFormValid] = useState(false);
 
   const handleSubmit = async () => {
     const coordinates = await getCoordinates(formData.street, formData.city2);
@@ -70,6 +72,7 @@ export const Form = ({ onFormClose }) => {
                   }
                 />
                 <Input
+                  validationMessage={emailValidation(formData.email)}
                   title="Váš e-mail:"
                   type="email"
                   value={formData.email}
@@ -97,6 +100,7 @@ export const Form = ({ onFormClose }) => {
                   }
                 />
                 <Input
+                  validationMessage={ageValidation(formData.age)}
                   title="Věk"
                   value={formData.age}
                   onChange={(e) =>
@@ -160,6 +164,7 @@ export const Form = ({ onFormClose }) => {
             </div>
           </form>
           <button
+            disabled={isFormValid}
             className="button-main"
             onClick={(e) => {
               e.preventDefault();
@@ -169,9 +174,6 @@ export const Form = ({ onFormClose }) => {
             }}
           >
             Odeslat
-          </button>
-          <button className="button-main" onClick={onFormClose}>
-            Zavřít
           </button>
         </div>
       </div>

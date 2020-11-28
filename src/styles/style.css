@@ -2,12 +2,18 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
   color: #282828;
+  max-width: 64em;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 3em 1em;
+  line-height: 1.5em;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 2rem;
 }
 a {
   text-decoration: none;
@@ -28,7 +34,7 @@ a {
 
 .menu {
   display: flex;
-  flex-basis: 500px;
+  flex-basis: 300px;
   justify-content: space-between;
   align-items: center;
   color: black;
@@ -44,14 +50,25 @@ a {
   border-radius: 60px;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
-
   color: #ffffff;
   background-color: #fa7269;
   cursor: pointer;
   outline: none;
 }
 .button__cta {
-  padding: 0 30px;
+  padding: 10px 35px;
+  display: inline-block;
+  height: 50px;
+  width: 160px;
+  margin: 0 40px 0 16px;
+}
+
+.button__cta2 {
+  padding: 10px 20px;
+  display: inline-block;
+  height: 50px;
+  width: 160px;
+  margin: 0 40px 0 16px;
 }
 
 .buttons__first-paragraph {
@@ -205,15 +222,6 @@ h2 {
   align-items: center;
   text-align: center;
   margin-top: 150px;
-}
-
-body {
-  max-width: 64em;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 3em 1em;
-  line-height: 1.5em;
-  font-family: sans-serif;
 }
 
 h2 {

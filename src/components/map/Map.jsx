@@ -41,7 +41,7 @@ export const Map = () => {
 
   return (
     <>
-      <div className="filter">
+      <div id="filter" className="filter">
         <label>
           Jaký typ pomoci chcete jste ochotný/ná poskytnout:
           <select

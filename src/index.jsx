@@ -15,7 +15,7 @@ const App = () => {
   return (
     <>
       <Notification text="Děkujeme! Váš formulář byl odeslán." />
-      <div className="full-bleed">
+      <div id="full-bleed" className="full-bleed">
         <h2>Vím komu pomoci</h2>
         <p>
           Vítě o někom kdo potřebuje pomoc? Skvěle! Rovnou je přihlašte. Pokud
@@ -29,7 +29,7 @@ const App = () => {
         </button>
       </div>
       {isModalOpen && <Form onRequestClose={toggleModal} />}
-      <p className="map__item">
+      <p id="map-item" className="map__item">
         Objevte naší interaktivní mapu a podívejte se kdo ve vašem okolí zrovna
         potřebuje pomoc:
       </p>

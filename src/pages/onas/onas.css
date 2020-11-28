@@ -16,6 +16,10 @@ body {
   align-items: center;
   margin-bottom: 2rem;
 }
+
+.logo {
+  width: 300px;
+}
 a {
   text-decoration: none;
   color: #282828;
@@ -39,4 +43,67 @@ a {
   justify-content: space-between;
   align-items: center;
   color: black;
+}
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.odkazy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.odkazy p {
+  margin: 5px;
+}
+
+.michaela {
+  display: flex;
+  flex-basis: 600px;
+  justify-content: center;
+  align-items: center;
+}
+.michaela img {
+  width: 200px;
+  border-radius: 100px;
+}
+
+.michaela p {
+  margin: 50px;
+  width: 400px;
+}
+
+.kristyna {
+  display: flex;
+  flex-basis: 600px;
+  justify-content: center;
+  align-items: center;
+}
+.kristyna img {
+  width: 200px;
+  border-radius: 100px;
+}
+
+.kristyna p {
+  margin: 50px;
+  width: 400px;
+}
+.linkedin {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: url(../../img/linkedin.svg);
+}
+.github {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: url(../../img/github.svg);
 }

@@ -1,14 +1,20 @@
+* {
+  box-sizing: border-box;
+}
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
   color: #282828;
-  max-width: 64em;
-  margin-right: auto;
-  margin-left: auto;
   line-height: 1.5em;
+  overflow-x: hidden;
+  width: 100vw;
+  margin: 0;
+}
+.content {
+  max-width: 64em;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
 }
 
 .header {
@@ -91,22 +97,6 @@ a {
   padding: 3rem;
 }
 
-.michaela {
-  display: flex;
-  flex-basis: 600px;
-  justify-content: center;
-  align-items: center;
-}
-.michaela img {
-  width: 200px;
-  border-radius: 100px;
-}
-
-.michaela p {
-  margin: 50px;
-  width: 400px;
-}
-
 .heading-h1 {
   display: flex;
   justify-content: left;
@@ -129,39 +119,6 @@ a {
   line-height: normal;
 }
 
-.odkazy {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.kristyna {
-  display: flex;
-  flex-basis: 600px;
-  justify-content: center;
-  align-items: center;
-}
-.kristyna img {
-  width: 200px;
-  border-radius: 100px;
-}
-
-.kristyna p {
-  margin: 50px;
-  width: 400px;
-}
-.linkedin {
-  display: block;
-  width: 100px;
-  height: 100px;
-  background: url(img/linkedin.svg);
-}
-.github {
-  display: block;
-  width: 100px;
-  height: 100px;
-  background: url(img/github.svg);
-}
 .layout {
   display: -webkit-box;
   display: flex;
@@ -219,13 +176,8 @@ a {
   align-items: center;
   text-align: center;
   width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
   padding: 3.5rem;
-  bottom: -10.5rem;
+  margin-top: 10rem;
 }
 
 .map {

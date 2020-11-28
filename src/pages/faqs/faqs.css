@@ -16,6 +16,10 @@ body {
   align-items: center;
   margin-bottom: 2rem;
 }
+
+.logo {
+  width: 300px;
+}
 a {
   text-decoration: none;
   color: #282828;

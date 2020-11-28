@@ -44,7 +44,7 @@ export const Form = ({ onFormClose }) => {
     document.addEventListener('keydown', onKeyDown);
 
     return () => {
-      document.body.style.overflow = 'visible';
+      document.body.style.overflow = null;
       document.removeEventListener('keydown', onKeyDown);
     };
   });

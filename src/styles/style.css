@@ -8,6 +8,7 @@ body {
   line-height: 1.5em;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 .header {

@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
 import { database } from '../../db.js';
+import { Input } from './components/Input.jsx';
 
 export const Form = ({ onRequestClose }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [telephone, setTelephone] = useState('');
   const [name2, setName2] = useState('');
-  const [age, setAge] = useState(0);
+  const [age, setAge] = useState('');
   const [street, setStreet] = useState('');
   //const [latitude, setLatitude] = useState(0);
   //const [longitude, setLongitude] = useState(0);
@@ -72,76 +73,50 @@ export const Form = ({ onRequestClose }) => {
             <div className="inputs">
               <div className="you">
                 <h3>Údaje o vás</h3>
-                <label>
-                  Vaše jméno a příjmení:
-                  <input
-                    id="jmeno-id"
-                    onChange={(e) => setName(e.target.value)}
-                    value={name}
-                  />
-                </label>
-                <label>
-                  Váš e-mail:{' '}
-                  <input
-                    type="email"
-                    id="email-id"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                </label>
-                <label>
-                  Vaše telefonní číslo:
-                  <input
-                    type="tel"
-                    id="telephone-id"
-                    value={telephone}
-                    onChange={(e) => setTelephone(e.target.value)}
-                  />
-                </label>
+                <Input
+                  title="Vaše jméno a příjmení"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+                <Input
+                  title="Váš e-mail:"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <Input
+                  title="Vaše telefonní číslo:"
+                  type="tel"
+                  value={telephone}
+                  onChange={(e) => setTelephone(e.target.value)}
+                />
               </div>
+
               <div className="them">
                 <h3>Údaje o osobě, které chcete pomoct</h3>
-                <label>
-                  Jméno a příjmení:
-                  <input
-                    id="jmeno2-id"
-                    value={name2}
-                    onChange={(e) => setName2(e.target.value)}
-                  />
-                </label>
-                <label>
-                  Věk:
-                  <input
-                    id="age-id"
-                    value={age}
-                    onChange={(e) => setAge(e.target.value)}
-                  />
-                </label>
-                <label>
-                  Adresa:{' '}
-                  <input
-                    type="text"
-                    id="adresa-id"
-                    value={street}
-                    onChange={(e) => setStreet(e.target.value)}
-                  />
-                </label>
-                <label>
-                  Město:
-                  <input
-                    type="text"
-                    id="mesto2-id"
-                    value={city2}
-                    onChange={(e) => setCity2(e.target.value)}
-                  />
-                </label>
-                <label htmlFor="popis-id">
-                  Popište, proč chcete dané osobě pomoci, v jaké situaci se
-                  osoba nachází a jakou formu pomoci by potřebovala:
-                </label>
-                <input
-                  type="text"
-                  id="popis-id"
+                <Input
+                  title="Jméno a příjmení:"
+                  value={name2}
+                  onChange={(e) => setName2(e.target.value)}
+                />
+                <Input
+                  title="Věk"
+                  value={age}
+                  onChange={(e) => setAge(e.target.value)}
+                />
+                <Input
+                  title="Adresa"
+                  value={street}
+                  onChange={(e) => setStreet(e.target.value)}
+                />
+                <Input
+                  title="Město"
+                  value={city2}
+                  onChange={(e) => setCity2(e.target.value)}
+                />
+                <Input
+                  title="Popište, proč chcete dané osobě pomoci, v jaké situaci se
+                  osoba nachází a jakou formu pomoci by potřebovala:"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                 />
@@ -184,7 +159,9 @@ export const Form = ({ onRequestClose }) => {
           >
             Odeslat
           </button>
-          <button className="button-main" onClick={onRequestClose}>Zavřít</button>
+          <button className="button-main" onClick={onRequestClose}>
+            Zavřít
+          </button>
         </div>
       </div>
     </>

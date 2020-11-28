@@ -21,7 +21,7 @@ export const Form = ({ onRequestClose }) => {
   const [formData, setFormData] = useState(defaultData);
 
   const handleSubmit = async () => {
-    const coordinates = await getCoordinates(street, city2);
+    const coordinates = await getCoordinates(formData.street, formData.city2);
 
     database.collection('people').add({
       ...formData,
@@ -65,20 +65,24 @@ export const Form = ({ onRequestClose }) => {
                 <Input
                   title="Vaše jméno a příjmení"
                   value={formData.name}
-                  onChange={(name) => setFormData({ ...formData, name })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
                 />
                 <Input
                   title="Váš e-mail:"
                   type="email"
                   value={formData.email}
-                  onChange={(email) => setFormData({ ...formData, email })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
                 />
                 <Input
                   title="Vaše telefonní číslo:"
                   type="tel"
                   value={formData.telephone}
-                  onChange={(telephone) =>
-                    setFormData({ ...formData, telephone })
+                  onChange={(e) =>
+                    setFormData({ ...formData, telephone: e.target.value })
                   }
                 />
               </div>
@@ -88,29 +92,37 @@ export const Form = ({ onRequestClose }) => {
                 <Input
                   title="Jméno a příjmení:"
                   value={formData.name2}
-                  onChange={(name2) => setFormData({ ...formData, name2 })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name2: e.target.value })
+                  }
                 />
                 <Input
                   title="Věk"
                   value={formData.age}
-                  onChange={(age) => setFormData({ ...formData, age })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, age: e.target.value })
+                  }
                 />
                 <Input
                   title="Adresa"
                   value={formData.street}
-                  onChange={(street) => setFormData({ ...formData, street })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, street: e.target.value })
+                  }
                 />
                 <Input
                   title="Město"
                   value={formData.city2}
-                  onChange={(city2) => setFormData({ ...formData, city2 })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, city2: e.target.value })
+                  }
                 />
                 <Input
                   title="Popište, proč chcete dané osobě pomoci, v jaké situaci se
                   osoba nachází a jakou formu pomoci by potřebovala:"
                   value={formData.description}
-                  onChange={(description) =>
-                    setFormData({ ...formData, description })
+                  onChange={(e) =>
+                    setFormData({ ...formData, description: e.target.value })
                   }
                 />
                 <label>
@@ -118,8 +130,8 @@ export const Form = ({ onRequestClose }) => {
                   <select
                     id="typ-pomoci-id"
                     value={formData.helpType}
-                    onChange={(helpType) =>
-                      setFormData({ ...formData, helpType })
+                    onChange={(e) =>
+                      setFormData({ ...formData, helpType: e.target.value })
                     }
                   >
                     <option value="">Vyberte</option>
@@ -134,8 +146,11 @@ export const Form = ({ onRequestClose }) => {
                     type="checkbox"
                     id="confirmation-id"
                     checked={formData.confirmation}
-                    onChange={(confirmation) =>
-                      setFormData({ ...formData, confirmation })
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        confirmation: e.target.checked,
+                      })
                     }
                   />
                   Osoba souhlasila s poskytnutím osobních informací v rámci

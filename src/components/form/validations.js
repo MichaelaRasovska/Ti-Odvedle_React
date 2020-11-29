@@ -1,39 +1,55 @@
-export const nameValidation = (fieldName, fieldValue) => {
-  if (fieldValue.trim() === '') {
-    return `${fieldName} is required`;
+export const nameValidation = (name) => {
+  if (name.trim() === '') {
+    return `Jméno je povinné`;
   }
-  if (/[^a-zA-Z -]/.test(fieldValue)) {
-    return 'Invalid characters';
+  if (/[^a-zA-Z -]/.test(name)) {
+    return 'Nesprávné znaky';
   }
-  if (fieldValue.trim().length < 3) {
-    return `${fieldName} needs to be at least three characters`;
+  if (name.trim().length < 3) {
+    return `Jméno musí mít alespoň tři znaky`;
   }
   return null;
 };
 
 export const emailValidation = (email) => {
-  if (
-    /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
-      email,
-    )
-  ) {
+  if (/^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-z]{2,4}$/.test(email)) {
     return null;
   }
   if (email.trim() === '') {
-    return 'Email is required';
+    return 'Email musí být vyplněn';
   }
-  return 'Please enter a valid email';
+  return 'Vložte prosím email ve správném tvaru';
 };
 
-export const ageValidation = (age) => {
-  if (!age) {
-    return 'Age is required';
+export const telValidation = (telephone) => {
+  if (/^[0-9]{9}$/.test(telephone)) {
+    return null;
   }
-  if (age < 18) {
-    return 'Age must be at least 18';
+  if (telephone === '') {
+    return 'Telefonní číslo musí být vyplněno';
   }
-  if (age > 99) {
-    return 'Age must be under 99';
+  if (telephone.length < 9) {
+    return `Telefonní číslo musí mít alespoň 9 číslic`;
+  }
+  return 'Vložte prosím tel. číslo bez mezer';
+};
+
+// export const ageValidation = (age) => {
+//   if (!age) {
+//     return 'Age is required';
+//   }
+//   if (age < 18) {
+//     return 'Age must be at least 18';
+//   }
+//   if (age > 99) {
+//     return 'Age must be under 99';
+//   }
+//   return null;
+// };
+
+export const requiredValidation = (value) => {
+  if (value.trim() === '') {
+    return 'Musí být vyplněno';
   }
   return null;
 };

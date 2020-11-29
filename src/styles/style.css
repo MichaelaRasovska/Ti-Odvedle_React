@@ -318,7 +318,10 @@ h2 {
 }
 
 @media only screen and (max-width: 600px) {
-  .footer {
-    width: 100%;
+  .full-bleed {
+    margin-top: 10rem;
   }
+  /* #map-section {
+
+  } */
 }

@@ -13,6 +13,7 @@ export const Marker = ({ person, setPopupData }) => {
       offsetLeft={-30}
     >
       <button
+        className="button-map"
         onClick={() =>
           setPopupData({
             latitude: person.latitude,
@@ -20,9 +21,9 @@ export const Marker = ({ person, setPopupData }) => {
             name2: person.name2,
             description: person.description,
             id: person.id,
+            age: person.age,
           })
         }
-        className="button-map"
       >
         <img src={pinUrl} alt="Špendlík" />
       </button>

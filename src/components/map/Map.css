@@ -4,15 +4,46 @@
   right: 10px;
 }
 
-.popup {
+.mapboxgl-popup-content {
+  margin: 0;
+  padding: 0;
+  border-radius: 10px;
+  border: 0.5px grey;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background-color: lavender;
+  text-align: left;
+  background: white;
+  width: 250px;
+  height: 200px;
+}
+.mapboxgl-popup-content h3 {
+  font-size: 20px;
+  margin: 5px;
+}
+
+.mapboxgl-popup-content p {
+  font-size: 12px;
+  line-height: 1rem;
+  padding: 10px;
 }
 
 .filter {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.mailto {
+  background-color: white;
+  text-align: center;
+}
+.mailto a {
+  display: block;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+.mailto a:hover {
+  background-color: lightblue;
+  color: #3498db;
 }

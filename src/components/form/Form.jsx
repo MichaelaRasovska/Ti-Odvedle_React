@@ -121,7 +121,7 @@ export const Form = ({ onFormClose }) => {
                 <Input
                   validationMessage={nameValidation(formData.name)}
                   errorMessage={errorMessage.name}
-                  title="Vaše jméno a příjmení:"
+                  title="Vaše jméno a příjmení: *"
                   value={formData.name}
                   onChange={(e) => {
                     setFormData({ ...formData, name: e.target.value });
@@ -131,7 +131,7 @@ export const Form = ({ onFormClose }) => {
                 <Input
                   validationMessage={emailValidation(formData.email)}
                   errorMessage={errorMessage.email}
-                  title="Váš e-mail:"
+                  title="Váš e-mail: *"
                   type="email"
                   value={formData.email}
                   onChange={(e) => {
@@ -142,7 +142,7 @@ export const Form = ({ onFormClose }) => {
                 <Input
                   validationMessage={telValidation(formData.telephone)}
                   errorMessage={errorMessage.telephone}
-                  title="Vaše telefonní číslo: (+420)"
+                  title="Vaše telefonní číslo: * (+420)"
                   type="tel"
                   value={formData.telephone}
                   onChange={(e) => {
@@ -157,7 +157,7 @@ export const Form = ({ onFormClose }) => {
                 <Input
                   validationMessage={nameValidation(formData.name2)}
                   errorMessage={errorMessage.name2}
-                  title="Jméno a příjmení:"
+                  title="Jméno a příjmení: *"
                   value={formData.name2}
                   onChange={(e) => {
                     setFormData({ ...formData, name2: e.target.value });
@@ -174,7 +174,7 @@ export const Form = ({ onFormClose }) => {
                 <Input
                   validationMessage={requiredValidation(formData.street)}
                   errorMessage={errorMessage.street}
-                  title="Adresa:"
+                  title="Adresa: *"
                   value={formData.street}
                   onChange={(e) => {
                     setFormData({ ...formData, street: e.target.value });
@@ -184,7 +184,7 @@ export const Form = ({ onFormClose }) => {
                 <Input
                   validationMessage={requiredValidation(formData.city)}
                   errorMessage={errorMessage.city}
-                  title="Město:"
+                  title="Město: *"
                   value={formData.city}
                   onChange={(e) => {
                     setFormData({ ...formData, city: e.target.value });
@@ -195,7 +195,7 @@ export const Form = ({ onFormClose }) => {
                   validationMessage={requiredValidation(formData.description)}
                   errorMessage={errorMessage.description}
                   title="Popište, proč chcete dané osobě pomoci, v jaké situaci se
-                  osoba nachází a jakou formu pomoci by potřebovala:"
+                  osoba nachází a jakou formu pomoci by potřebovala: *"
                   value={formData.description}
                   onChange={(e) => {
                     setFormData({ ...formData, description: e.target.value });

@@ -31,7 +31,7 @@ export const Checkbox = ({
           onChange={onClickChange}
         />
         Osoba souhlasila s poskytnutím osobních informací v rámci projektu Ti
-        Odvedle.
+        Odvedle. *
       </label>
       <span className="form-error">{message}</span>
     </>

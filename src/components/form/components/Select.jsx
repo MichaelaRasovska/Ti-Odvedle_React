@@ -24,7 +24,7 @@ export const Select = ({
 
   return (
     <label className="form-label">
-      Jaký typ pomoci hledáte:
+      Jaký typ pomoci hledáte: *
       <select className="form-select" value={value} onChange={onSelectChange}>
         <option value="">Vyberte</option>
         <option value="Materiální pomoc">Materiální pomoc</option>

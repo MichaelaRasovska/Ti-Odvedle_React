@@ -89,13 +89,19 @@ export const Map = () => {
               longitude={popupData.longitude}
               onClose={() => setPopupData(null)}
             >
-              <div className="popup">
-                <h3>{popupData.name2}</h3>
-                <p>{popupData.description}</p>
+              <div>
+                <h3>
+                  {popupData.name2.split(' ')[0]}, {popupData.age} let
+                </h3>
                 <p>
-                  Máte zájem pomoct {popupData.name2} ? Kontaktujte nás na email
-                  info@tiodvedle.cz s ID {popupData.id}
+                  Co {popupData.name2.split(' ')[0]} potřebuje: <br />
+                  {popupData.description}
                 </p>
+                <div className="mailto">
+                  <a href={`mailto:info@tiodvedle.cz?subject=${popupData.id}`}>
+                    Máte zájem pomoct? Kontaktujte nás na email.
+                  </a>
+                </div>
               </div>
             </Popup>
           )}

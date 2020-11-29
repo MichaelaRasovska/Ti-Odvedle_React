@@ -5,12 +5,21 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
   color: #282828;
-  max-width: 64em;
   margin-right: auto;
+  max-width: 64em;
   margin-left: auto;
   line-height: 1.5em;
   display: flex;
   flex-direction: column;
+}
+
+.onas {
+  max-width: 64em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .header {
@@ -47,66 +56,59 @@ a {
   align-items: center;
   color: black;
 }
-h1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-h2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .odkazy {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-around;
+  margin-left: 15px;
 }
-.odkazy p {
-  margin: 5px;
-}
-
-.michaela {
-  display: flex;
-  flex-basis: 300px;
-  justify-content: center;
-  align-items: center;
-}
-.michaela img {
-  width: 200px;
-  border-radius: 100px;
-}
-
-.michaela p {
-  margin: 50px;
-  width: 400px;
-}
-
+.michaela,
 .kristyna {
   display: flex;
-  flex-basis: 300px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.michaela-content,
+.kristyna-content {
+  display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
-.kristyna img {
-  width: 200px;
-  border-radius: 100px;
+.img-holder {
+  width: auto;
+  display: inline-block;
 }
 
-.kristyna p {
-  margin: 50px;
-  width: 400px;
+.michaela img,
+.kristyna img {
+  width: 200px;
+  height: auto;
+  border-radius: 50% 50% 50% 50%;
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 30px;
 }
+
+.michaela p,
+.kristyna p {
+  width: 60%;
+  margin-left: 0px;
+  text-align: justify;
+}
+
 .linkedin {
   display: block;
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
   background: url(../../img/linkedin.svg);
 }
 .github {
   display: block;
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
   background: url(../../img/github.svg);
 }

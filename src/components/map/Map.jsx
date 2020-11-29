@@ -60,9 +60,9 @@ export const Map = () => {
       <div id="map" className="map">
         <ReactMapGL
           {...viewport}
-          /* alternativa k: latitude={viewport.latitude}
-			longitude={viewport.longitude}
-			zoom={viewport.zoom}*/
+      // alternativa k: latitude={viewport.latitude}
+			// longitude={viewport.longitude}
+			// zoom={viewport.zoom}
           onViewportChange={(nextViewport) => setViewport(nextViewport)}
           width="50%"
           height={400}
@@ -87,19 +87,21 @@ export const Map = () => {
             <Popup
               latitude={popupData.latitude}
               longitude={popupData.longitude}
+              closeOnClick={false}
               onClose={() => setPopupData(null)}
             >
-              <div>
+              <div onClick={() => setPopupData(null)}>
                 <h3>
                   {popupData.name2.split(' ')[0]}, {popupData.age} let
                 </h3>
-                <p>
-                  Co {popupData.name2.split(' ')[0]} potřebuje: <br />
-                  {popupData.description}
-                </p>
+                <p>{popupData.description}</p>
                 <div className="mailto">
-                  <a href={`mailto:info@tiodvedle.cz?subject=${popupData.id}`}>
-                    Máte zájem pomoct? Kontaktujte nás na email.
+                  <a
+                    href={`mailto:info@tiodvedle.cz?subject=${popupData.id}`}
+                    target="_blank"
+                  >
+                    Máte zájem pomoct? Kontaktujte nás na email
+                    info@tiodvedle.cz s předmětem ID: {popupData.id}.
                   </a>
                 </div>
               </div>

@@ -12,6 +12,7 @@ import {
 } from './validations.js';
 import { Select } from './components/Select.jsx';
 import { Checkbox } from './components/Checkbox.jsx';
+import { Textarea } from './components/Textarea.jsx';
 
 const defaultData = {
   name: '',
@@ -190,7 +191,7 @@ export const Form = ({ onFormClose }) => {
                     setErrorMessage({ ...errorMessage, city: '' });
                   }}
                 />
-                <Input
+                <Textarea
                   validationMessage={requiredValidation(formData.description)}
                   errorMessage={errorMessage.description}
                   title="Popište, proč chcete dané osobě pomoci, v jaké situaci se

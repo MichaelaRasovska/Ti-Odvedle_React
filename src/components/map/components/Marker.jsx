@@ -7,7 +7,6 @@ import './Marker.css';
 export const Marker = ({ person, setPopupData }) => {
   return (
     <MarkerGL
-      key={person.id}
       latitude={person.latitude}
       longitude={person.longitude}
       offsetTop={-30}

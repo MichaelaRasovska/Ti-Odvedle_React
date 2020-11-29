@@ -74,7 +74,13 @@ export const Map = () => {
             <GeolocateControl />
           </div>
           {dataFiltered.map((person) => {
-            return <Marker person={person} setPopupData={setPopupData} />;
+            return (
+              <Marker
+                key={person.id}
+                person={person}
+                setPopupData={setPopupData}
+              />
+            );
           })}
 
           {popupData !== null && (

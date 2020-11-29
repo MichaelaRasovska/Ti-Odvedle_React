@@ -2,9 +2,6 @@ export const nameValidation = (name) => {
   if (name.trim() === '') {
     return `Jméno je povinné`;
   }
-  if (/[^a-zA-Z -]/.test(name)) {
-    return 'Nesprávné znaky';
-  }
   if (name.trim().length < 3) {
     return `Jméno musí mít alespoň tři znaky`;
   }

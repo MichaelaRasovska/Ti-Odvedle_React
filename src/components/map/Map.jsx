@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import ReactMapGL, {
-  GeolocateControl,
-  NavigationControl,
-  Popup,
-} from 'react-map-gl';
+import ReactMapGL, { GeolocateControl, NavigationControl } from 'react-map-gl';
 import { seznamMapy } from './seznamMapa.js';
 import { database } from '../../db.js';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import './Map.css';
 import { Marker } from './components/Marker.jsx';
+import { Popup } from './components/Popup.jsx';
 
 export const Map = () => {
   const [viewport, setViewport] = useState({
@@ -60,9 +57,9 @@ export const Map = () => {
       <div id="map" className="map">
         <ReactMapGL
           {...viewport}
-      // alternativa k: latitude={viewport.latitude}
-			// longitude={viewport.longitude}
-			// zoom={viewport.zoom}
+          // alternativa k: latitude={viewport.latitude}
+          // longitude={viewport.longitude}
+          // zoom={viewport.zoom}
           onViewportChange={(nextViewport) => setViewport(nextViewport)}
           width="50%"
           height={400}
@@ -89,23 +86,12 @@ export const Map = () => {
               longitude={popupData.longitude}
               closeOnClick={false}
               onClose={() => setPopupData(null)}
-            >
-              <div onClick={() => setPopupData(null)}>
-                <h3>
-                  {popupData.name2.split(' ')[0]}, {popupData.age} let
-                </h3>
-                <p>{popupData.description}</p>
-                <div className="mailto">
-                  <a
-                    href={`mailto:info@tiodvedle.cz?subject=${popupData.id}`}
-                    target="_blank"
-                  >
-                    Máte zájem pomoct? Kontaktujte nás na email
-                    info@tiodvedle.cz s předmětem ID: {popupData.id}.
-                  </a>
-                </div>
-              </div>
-            </Popup>
+              onClick={() => setPopupData(null)}
+              age={popupData.age}
+              name2={popupData.name2}
+              description={popupData.description}
+              id={popupData.id}
+            />
           )}
         </ReactMapGL>
       </div>

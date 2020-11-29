@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import './Input.css';
+import './Select.css';
 
-export const Input = ({
-  title,
-  type,
+export const Select = ({
   value,
   onChange,
   validationMessage,
@@ -11,7 +9,7 @@ export const Input = ({
 }) => {
   const [fieldChanged, setFieldChanged] = useState(false);
 
-  const onInputChange = (e) => {
+  const onSelectChange = (e) => {
     setFieldChanged(true);
     onChange(e);
   };
@@ -26,13 +24,14 @@ export const Input = ({
 
   return (
     <label className="form-label">
-      {title}
-      <input
-        className="form-input"
-        type={type}
-        value={value}
-        onChange={onInputChange}
-      />
+      Jaký typ pomoci hledáte:
+      <select className="form-select" value={value} onChange={onSelectChange}>
+        <option value="">Vyberte</option>
+        <option value="Materiální pomoc">Materiální pomoc</option>
+        <option value="Fyzická pomoc">Fyzická pomoc</option>
+        <option value="Odvoz">Odvoz</option>
+        <option value="Jiné">Jiné</option>
+      </select>
       <span className="form-error">{message}</span>
     </label>
   );

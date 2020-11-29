@@ -53,3 +53,10 @@ export const requiredValidation = (value) => {
   }
   return null;
 };
+
+export const confirmationValidation = (value) => {
+  if (value === false) {
+    return 'Musí být vyplněno';
+  }
+  return null;
+};

@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
-import './Input.css';
 
-export const Input = ({
-  title,
-  type,
-  value,
+export const Checkbox = ({
+  checked,
   onChange,
   validationMessage,
   errorMessage,
 }) => {
   const [fieldChanged, setFieldChanged] = useState(false);
 
-  const onInputChange = (e) => {
+  const onClickChange = (e) => {
     setFieldChanged(true);
     onChange(e);
   };
@@ -25,15 +22,18 @@ export const Input = ({
   }
 
   return (
-    <label className="form-label">
-      {title}
-      <input
-        className="form-input"
-        type={type}
-        value={value}
-        onChange={onInputChange}
-      />
+    <>
+      <label>
+        <input
+          className="form-checkbox"
+          type="checkbox"
+          checked={checked}
+          onChange={onClickChange}
+        />
+        Osoba souhlasila s poskytnutím osobních informací v rámci projektu Ti
+        Odvedle.
+      </label>
       <span className="form-error">{message}</span>
-    </label>
+    </>
   );
 };

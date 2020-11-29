@@ -41,10 +41,10 @@ const App = () => {
         {isModalOpen && <Form onFormClose={onFormClose} />}
       </section>
       <section className="map-section">
-        <h2 className="map-heading">Chci pomáhat:</h2>
+        <h2 className="map-heading">Chci pomáhat</h2>
         <p id="map-item" className="map__item">
           Objevte naší interaktivní mapu a podívejte se kdo ve vašem okolí
-          zrovna potřebuje pomoc:
+          zrovna potřebuje pomoc.
         </p>
         <Map />
       </section>

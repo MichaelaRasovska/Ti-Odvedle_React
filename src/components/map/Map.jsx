@@ -38,31 +38,27 @@ export const Map = () => {
 
   return (
     <>
-      <div id="filter" className="filter">
-        <label>
-          Jaký typ pomoci chcete jste ochotný/ná poskytnout:
-          <select
-            value={filter}
-            onChange={(event) => setFilter(event.target.value)}
-          >
-            {' '}
-            <option value="">Vyberte</option>
-            <option value="Materiální pomoc">Materiální pomoc</option>
-            <option value="Fyzická pomoc">Fyzická pomoc</option>
-            <option value="Odvoz">Odvoz</option>
-            <option value="Jiné">Jiné</option>
-          </select>
-        </label>
-      </div>
+      <label>
+        Jaký typ pomoci chcete jste ochotný/ná poskytnout:
+        <select
+          className="map-select"
+          value={filter}
+          onChange={(event) => setFilter(event.target.value)}
+        >
+          {' '}
+          <option value="">Vyberte</option>
+          <option value="Materiální pomoc">Materiální pomoc</option>
+          <option value="Fyzická pomoc">Fyzická pomoc</option>
+          <option value="Odvoz">Odvoz</option>
+          <option value="Jiné">Jiné</option>
+        </select>
+      </label>
       <div id="map" className="map">
         <ReactMapGL
           {...viewport}
-          // alternativa k: latitude={viewport.latitude}
-          // longitude={viewport.longitude}
-          // zoom={viewport.zoom}
           onViewportChange={(nextViewport) => setViewport(nextViewport)}
-          width="50%"
-          height={400}
+          width="80%"
+          height={500}
           mapboxApiAccessToken="pk.eyJ1IjoidGlvZHZlZGxlIiwiYSI6ImNraHV2NWw3bjBvaHMycnA1aDJvenY3YjYifQ.84cTo_cZbhjqOJ7r-BveXw"
           mapStyle={seznamMapy}
         >
@@ -79,7 +75,6 @@ export const Map = () => {
               />
             );
           })}
-
           {popupData !== null && (
             <Popup
               latitude={popupData.latitude}

@@ -110,6 +110,9 @@ h2 {
 /* headings end */
 
 /* layout images-text */
+#map {
+  height: 500px;
+}
 
 .layout {
   display: -webkit-box;
@@ -211,7 +214,11 @@ h2 {
   text-align: center;
   flex-direction: column;
 }
-
+.map-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .map__item {
   display: flex;
   justify-content: center;

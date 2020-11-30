@@ -11,7 +11,7 @@ export const Map = () => {
   const [viewport, setViewport] = useState({
     latitude: 49.74710775928191,
     longitude: 15.338544069716827,
-    zoom: 5.6,
+    zoom: 6.5,
   }); //nastaví defaultní pozici zacílení mapy
 
   const [popupData, setPopupData] = useState(null);
@@ -39,7 +39,7 @@ export const Map = () => {
   return (
     <>
       <label>
-        Jaký typ pomoci chcete jste ochotný/ná poskytnout:
+        Chci pomáhat:
         <select
           className="map-select"
           value={filter}
@@ -47,10 +47,10 @@ export const Map = () => {
         >
           {' '}
           <option value="">Vyberte</option>
-          <option value="Materiální pomoc">Materiální pomoc</option>
-          <option value="Fyzická pomoc">Fyzická pomoc</option>
-          <option value="Odvoz">Odvoz</option>
-          <option value="Jiné">Jiné</option>
+          <option value="Materiální pomoc">materiálně</option>
+          <option value="Fyzická pomoc">fyzicky</option>
+          <option value="Odvoz">s odvozem</option>
+          <option value="Jiné">jinak</option>
         </select>
       </label>
       <div id="map" className="map">

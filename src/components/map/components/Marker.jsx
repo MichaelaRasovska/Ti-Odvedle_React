@@ -1,7 +1,7 @@
 import 'mapbox-gl/dist/mapbox-gl.css';
 import React from 'react';
 import { Marker as MarkerGL } from 'react-map-gl';
-import pinUrl from '../../../img/pin.svg';
+import pinUrl from '../../../img/pin2.svg';
 import './Marker.css';
 
 export const Marker = ({ person, setPopupData }) => {
@@ -25,7 +25,7 @@ export const Marker = ({ person, setPopupData }) => {
           })
         }
       >
-        <img src={pinUrl} alt="Špendlík" />
+        <img src={pinUrl} alt="Špendlík" width={50} height={50} />
       </button>
     </MarkerGL>
   );

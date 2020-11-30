@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import './Checkbox.css';
 
 export const Checkbox = ({
   checked,
   onChange,
   validationMessage,
   errorMessage,
+  text,
 }) => {
   const [fieldChanged, setFieldChanged] = useState(false);
 
@@ -30,8 +32,7 @@ export const Checkbox = ({
           checked={checked}
           onChange={onClickChange}
         />
-        Osoba souhlasila s poskytnutím osobních informací v rámci projektu Ti
-        Odvedle. *
+        {text}
       </label>
       <span className="form-error">{message}</span>
     </>

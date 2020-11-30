@@ -32,7 +32,7 @@ export const Textarea = ({
         type={type}
         value={value}
         onChange={onInputChange}
-        rows="10"
+        rows="6"
         cols="30"
       ></textarea>
       <span className="form-error">{message}</span>

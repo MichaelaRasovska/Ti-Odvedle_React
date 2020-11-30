@@ -61,6 +61,20 @@ a {
   cursor: pointer;
   outline: none;
 }
+
+.button-help {
+  height: 50px;
+  width: 160px;
+  box-sizing: border-box;
+  border: transparent;
+  border-radius: 60px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+  background-color: #fa7269;
+  cursor: pointer;
+  outline: none;
+}
 .button__cta {
   padding: 10px 20px;
   margin-left: 0px;
@@ -77,6 +91,11 @@ a {
   text-align: center;
 }
 
+.buttons__help {
+  display: flex;
+  justify-content: flex-start;
+  text-align: center;
+}
 /* buttons end */
 
 /* headings */

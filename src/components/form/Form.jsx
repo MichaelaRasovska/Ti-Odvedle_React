@@ -112,46 +112,26 @@ export const Form = ({ onFormClose }) => {
           <button className="cross" onClick={onFormClose}>
             x
           </button>
-          <h2 className="form-title">Tohle je formulář</h2>
-          <p>tady bude text</p>
+          <h2 className="form-title">Vyžádat pomoc</h2>
+          <p>
+            Děkujeme, že vám vaše okolí není lhostejné! Prosíme vyplňte náš
+            formulář níže a nezapomeňte přesně popsat, jakou formu pomoci osoba,
+            rodina či jiný subjekt potřebuje a proč. Správný popis bude klíčový
+            při hledání lidí, kteří by pomoc byli schopni poskytnout.
+          </p>
+          <p>
+            Poté, co formulář odešlete, vaši žádost zkontrolujeme a pokud bude
+            všechno v pořádku, křestní jméno osoby, její věk a popis pomoci
+            zadáme do naší mapy. Nebojte, v mapě neuvádíme žádné identifikační
+            údaje, které by uvedenou osobu nebo vás mohly přesně identifikovat.
+            Vyplněné údaje o osobě, které chcete pomoct, slouží výhradně pro
+            účely zobrazování mapy. Žádné údaje vyplněné ve formuláři nebudou
+            dále distribuovány třetím stranám, ani využívány k obchodním účelům.
+            V případě, že se najde osoba, která vyžádanou pomoc bude ochotna
+            poskytnout, kontaktujeme vás s žádostí o propojení.
+          </p>
           <form className="form">
             <div className="inputs">
-              <div className="you">
-                <h3>Údaje o vás</h3>
-                <Input
-                  validationMessage={nameValidation(formData.name)}
-                  errorMessage={errorMessage.name}
-                  title="Vaše jméno a příjmení: *"
-                  value={formData.name}
-                  onChange={(e) => {
-                    setFormData({ ...formData, name: e.target.value });
-                    setErrorMessage({ ...errorMessage, name: '' });
-                  }}
-                />
-                <Input
-                  validationMessage={emailValidation(formData.email)}
-                  errorMessage={errorMessage.email}
-                  title="Váš e-mail: *"
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => {
-                    setFormData({ ...formData, email: e.target.value });
-                    setErrorMessage({ ...errorMessage, email: '' });
-                  }}
-                />
-                <Input
-                  validationMessage={telValidation(formData.telephone)}
-                  errorMessage={errorMessage.telephone}
-                  title="Vaše telefonní číslo: * (+420)"
-                  type="tel"
-                  value={formData.telephone}
-                  onChange={(e) => {
-                    setFormData({ ...formData, telephone: e.target.value });
-                    setErrorMessage({ ...errorMessage, telephone: '' });
-                  }}
-                />
-              </div>
-
               <div className="them">
                 <h3>Údaje o osobě, které chcete pomoct</h3>
                 <Input
@@ -211,12 +191,49 @@ export const Form = ({ onFormClose }) => {
                     setErrorMessage({ ...errorMessage, helpType: '' });
                   }}
                 />
+              </div>
+              <div className="you">
+                <h3>Údaje o vás</h3>
+                <Input
+                  validationMessage={nameValidation(formData.name)}
+                  errorMessage={errorMessage.name}
+                  title="Vaše jméno a příjmení: *"
+                  value={formData.name}
+                  onChange={(e) => {
+                    setFormData({ ...formData, name: e.target.value });
+                    setErrorMessage({ ...errorMessage, name: '' });
+                  }}
+                />
+                <Input
+                  validationMessage={emailValidation(formData.email)}
+                  errorMessage={errorMessage.email}
+                  title="Váš e-mail: *"
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) => {
+                    setFormData({ ...formData, email: e.target.value });
+                    setErrorMessage({ ...errorMessage, email: '' });
+                  }}
+                />
+                <Input
+                  validationMessage={telValidation(formData.telephone)}
+                  errorMessage={errorMessage.telephone}
+                  title="Vaše telefonní číslo: * (+420)"
+                  type="tel"
+                  value={formData.telephone}
+                  onChange={(e) => {
+                    setFormData({ ...formData, telephone: e.target.value });
+                    setErrorMessage({ ...errorMessage, telephone: '' });
+                  }}
+                />
                 <Checkbox
                   validationMessage={confirmationValidation(
                     formData.confirmation,
                   )}
                   errorMessage={errorMessage.confirmation}
                   checked={formData.confirmation}
+                  text="Souhlasím se zpracováním osobních údajů a zároveň potvrzuji, že osoba, pro kterou pomoc žádám, souhlasila s poskytnutím osobních informací v rámci projektu Ti
+                  Odvedle. *"
                   onChange={(e) => {
                     setFormData({
                       ...formData,

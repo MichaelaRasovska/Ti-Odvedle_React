@@ -12,29 +12,31 @@ export const Map = () => {
     latitude: 49.74710775928191,
     longitude: 15.338544069716827,
     zoom: 6.5,
-  }); //nastaví defaultní pozici zacílení mapy
+  });
 
-  const [popupData, setPopupData] = useState(null);
-
-  const [peopleData, setPeopleData] = useState([]); //vytvořím si stav, do kterého si stáhnu data z databáze jako pole
-
+  const [peopleData, setPeopleData] = useState([]);
   const [filter, setFilter] = useState('');
-
-  const dataFiltered = filter
-    ? peopleData.filter((person) => person.helpType === filter)
-    : peopleData;
+  const [popupData, setPopupData] = useState(null);
 
   useEffect(() => {
     return database.collection('people').onSnapshot((query) => {
       setPeopleData(
         query.docs.map((doc) => {
-          const data = doc.data(); //vytvořím si proměnnou data, do té uložím data z documents z firebasu
-          data.id = doc.id; //do proměnné data.id si uložím id dat z firebasu
+          const data = doc.data();
+          data.id = doc.id;
           return data;
         }),
       );
     });
-  }, []); //useEffect volám při načtení stránky, ale onSnapshot updatuje data při změně
+  }, []);
+
+  //prep for filtering only approved data
+  //const dataApproved = peopleData.filter((person) => person.approved === true);
+  //console.log(dataApproved);
+
+  const dataFiltered = filter
+    ? peopleData.filter((person) => person.helpType === filter)
+    : peopleData;
 
   return (
     <>

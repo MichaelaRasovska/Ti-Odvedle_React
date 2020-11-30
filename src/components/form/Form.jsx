@@ -25,6 +25,7 @@ const defaultData = {
   description: '',
   helpType: '',
   confirmation: false,
+  approved: false,
 };
 
 export const Form = ({ onFormClose }) => {

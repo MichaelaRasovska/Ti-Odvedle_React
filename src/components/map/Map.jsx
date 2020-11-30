@@ -41,7 +41,7 @@ export const Map = () => {
       <section id="map-section" className="map-section">
         <h2 className="map-heading">Interaktivní mapa pomoci</h2>
         <p id="map-item" className="map__item">
-          Objevte naší interaktivní mapu a podívejte se kdo ve vašem okolí
+          Objevte naší interaktivní mapu a podívejte se, kdo ve vašem okolí
           zrovna potřebuje pomoc.
         </p>
         <label>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="oprojektu.css" />
+    <link rel="stylesheet" href="../styles/pages.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap"
@@ -13,6 +13,22 @@
     <title>O projektu</title>
   </head>
   <body>
+    <nav role="navigation">
+      <div id="menuToggle">
+        <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+        <ul id="menu">
+          <li>
+            <a href="/pages/oprojektu.html">O projektu</a>
+          </li>
+          <li><a href="/pages/FAQs.html">FAQs</a></li>
+          <li><a href="/pages/onas.html">O nás</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="content">
     <section class="nav-menu">
       <header class="header">
         <a href="../../index.html"
@@ -22,19 +38,23 @@
             alt="Logo Ti Odvedle"
         /></a>
         <div class="menu">
-          <a class="menu__item" href="/pages/oprojektu/index.html"
-            >O projektu</a
-          >
-          <a class="menu__item" href="/pages/faqs/index.html">FAQs</a>
-          <a class="menu__item" href="/pages/onas/index.html">O nás</a>
+          <a class="menu__item" href="/pages/oprojektu.html">O projektu</a>
+          <a class="menu__item" href="/pages/FAQs.html">FAQs</a>
+          <a class="menu__item" href="/pages/onas.html">O nás</a>
         </div>
       </header>
     </section>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, odio eveniet
-      enim soluta unde aperiam aliquid rem nostrum? Quibusdam, suscipit. Quia
-      nesciunt, tempore pariatur libero culpa quod dolorem quidem nisi.
-    </p>
+    <div class="oprojektu">
+      <h1>O projektu</h1>
+      <div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, odio
+          eveniet enim soluta unde aperiam aliquid rem nostrum? Quibusdam,
+          suscipit. Quia nesciunt, tempore pariatur libero culpa quod dolorem
+          quidem nisi.
+        </p>
+      </div>
+    </div>
     <footer>
       <div class="footer">
         <a class="footer__item-saying">Vytvořeno s 💚 v ČR.</a>
@@ -47,6 +67,7 @@
           >Illustrations by pch.vector</a
         >
       </div>
+    </div>
     </footer>
   </body>
 </html>

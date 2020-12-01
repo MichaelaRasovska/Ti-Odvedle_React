@@ -35,10 +35,14 @@ const App = () => {
           případě rovnou vyplňte náš formulář na vyžádání pomoci. Pokud nebude
           cokoliv jasné, projděte si naše FAQs, kde se dozvíte, jak se s lidmi o
           pomoci bavit i čeho se vyvarovat. Najdete zde i tipy, konkrétní
-          příklady pomoci a také odpovědi na téma týkající se GDPR. Pojďme společně dělat
-          Česko lepším místem pro život!
+          příklady pomoci a také odpovědi na téma týkající se GDPR. Pojďme
+          společně dělat Česko lepším místem pro život!
         </p>
-        <button id="sign" className="button-main" onClick={toggleModal}>
+        <button
+          id="sign"
+          className="button-main button__cta2"
+          onClick={toggleModal}
+        >
           Vyžádat pomoc
         </button>
         {isModalOpen && <Form onFormClose={onFormClose} />}

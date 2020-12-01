@@ -2,33 +2,26 @@ import React from 'react';
 import { Popup as PopupGL } from 'react-map-gl';
 import './Popup.css';
 
-export const Popup = ({
-  latitude,
-  longitude,
-  closeOnClick,
-  onClose,
-  age,
-  name2,
-  description,
-  id,
-  onClick,
-}) => {
+export const Popup = ({ onClose, popupData }) => {
   return (
     <PopupGL
-      latitude={latitude}
-      longitude={longitude}
-      closeOnClick={closeOnClick}
+      latitude={popupData.latitude}
+      longitude={popupData.longitude}
+      closeOnClick={false}
       onClose={onClose}
     >
-      <div onClick={onClick}>
+      <div onClose={onClose}>
         <h3>
-          {name2.split(' ')[0]}, {age} let
+          {popupData.name2.split(' ')[0]}, {popupData.age} let
         </h3>
-        <p>{description}</p>
+        <p>{popupData.description}</p>
         <div className="mailto">
-          <a href={`mailto:info@tiodvedle.cz?subject=${id}`} target="_blank">
+          <a
+            href={`mailto:info@tiodvedle.cz?subject=${popupData.id}`}
+            target="_blank"
+          >
             Máte zájem pomoct? Kontaktujte nás na email info@tiodvedle.cz s
-            předmětem ID: {id}.
+            předmětem ID: {popupData.id}.
           </a>
         </div>
       </div>

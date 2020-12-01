@@ -78,15 +78,8 @@ export const Map = () => {
             })}
             {popupData !== null && (
               <Popup
-                latitude={popupData.latitude}
-                longitude={popupData.longitude}
-                closeOnClick={false}
+                popupData={popupData}
                 onClose={() => setPopupData(null)}
-                onClick={() => setPopupData(null)}
-                age={popupData.age}
-                name2={popupData.name2}
-                description={popupData.description}
-                id={popupData.id}
               />
             )}
           </ReactMapGL>

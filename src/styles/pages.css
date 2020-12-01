@@ -303,6 +303,12 @@ input:checked ~ .tab-content {
   .layout:not(:first-of-type) {
     margin-top: 0;
   }
+
+  .oprojektu,
+  .onas,
+  .faqs {
+    width: 80%;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -458,6 +464,17 @@ input:checked ~ .tab-content {
   #menuToggle input:checked ~ ul {
     transform: none;
     opacity: 1;
+  }
+
+  .content {
+    justify-content: center;
+  }
+
+  .oprojektu,
+  .onas,
+  .faqs {
+    width: 100%;
+    text-align: center;
   }
 
   @media screen and (max-width: 768px) {

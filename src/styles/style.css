@@ -18,6 +18,7 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 /* homepage general end */
 
 /* menu */
@@ -249,8 +250,10 @@ h2 {
   .p__first-paragraph {
     margin-left: 60px;
   }
-  .buttons__first-paragraph {
-    margin-left: 60px;
+  .buttons__first-paragraph,
+  .buttons__help {
+    margin: 0 4rem;
+    padding: 0;
   }
 
   .imgMain__house {
@@ -258,6 +261,7 @@ h2 {
   }
 
   .layout__item {
+    width: 90%;
     padding-top: 1em;
     padding-left: 1em;
   }
@@ -321,10 +325,11 @@ h2 {
     margin-left: 80px;
   }
 
-  .buttons__first-paragraph {
+  .buttons__first-paragraph,
+  .buttons__help {
     flex-direction: column;
     justify-content: center;
-    padding: 5rem;
+    margin: 0 5rem 5rem 5rem;
   }
 
   .button__cta {
@@ -409,8 +414,8 @@ h2 {
 
     transform-origin: 4px 0px;
 
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
-      background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    background: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
   }
 
   #menuToggle span:first-child {

@@ -10,12 +10,19 @@ export const Popup = ({ onClose, popupData }) => {
       closeOnClick={false}
       onClose={onClose}
     >
-      <div onClose={onClose}>
-        <h3>
-          {popupData.name2.split(' ')[0]}, {popupData.age} let
-        </h3>
-        <p>{popupData.description}</p>
-        <div className="mailto">
+      <div className="popup-container" onClose={onClose}>
+        <div className='popup-person'>
+          <div className="popup-title">
+            <h3>
+              {popupData.name2.split(' ')[0]}, {popupData.age} let
+            </h3>
+          </div>
+          <div className="popup-divider"></div>
+          <div className="popup-description">
+            <p>{popupData.description}</p>
+          </div>
+        </div>
+        <div className="popup-mailto">
           <a
             href={`mailto:info@tiodvedle.cz?subject=${popupData.id}`}
             target="_blank"

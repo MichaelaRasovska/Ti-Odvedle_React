@@ -187,6 +187,9 @@ export const Form = ({ onFormClose }) => {
                   validationMessage={requiredValidation(formData.helpType)}
                   errorMessage={errorMessage.helpType}
                   value={formData.helpType}
+                  text="Osoba potřebuje pomoct: *"
+                  labelClass="form-label"
+                  selectClass="form-select"
                   onChange={(e) => {
                     setFormData({ ...formData, helpType: e.target.value });
                     setErrorMessage({ ...errorMessage, helpType: '' });

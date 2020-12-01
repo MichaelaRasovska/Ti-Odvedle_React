@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import './Select.css';
 
 export const Select = ({
   value,
   onChange,
   validationMessage,
   errorMessage,
+  text,
+  labelClass,
+  selectClass
 }) => {
   const [fieldChanged, setFieldChanged] = useState(false);
 
@@ -23,14 +25,14 @@ export const Select = ({
   }
 
   return (
-    <label className="form-label">
-      Jaký typ pomoci hledáte: *
-      <select className="form-select" value={value} onChange={onSelectChange}>
+    <label className={labelClass}>
+      {text}
+      <select className={selectClass} value={value} onChange={onSelectChange}>
         <option value="">Vyberte</option>
-        <option value="Materiální pomoc">Materiální pomoc</option>
-        <option value="Fyzická pomoc">Fyzická pomoc</option>
-        <option value="Odvoz">Odvoz</option>
-        <option value="Jiné">Jiné</option>
+        <option value="Materiální pomoc">materiálně</option>
+        <option value="Fyzická pomoc">fyzicky</option>
+        <option value="Odvoz">s odvozem</option>
+        <option value="Jiné">jinak</option>
       </select>
       <span className="form-error">{message}</span>
     </label>

@@ -6,6 +6,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import './Map.css';
 import { Marker } from './components/Marker.jsx';
 import { Popup } from './components/Popup.jsx';
+import { Select } from '../form/components/Select.jsx';
 
 export const Map = () => {
   const [viewport, setViewport] = useState({
@@ -46,21 +47,13 @@ export const Map = () => {
           Objevte naší interaktivní mapu a podívejte se, kdo ve vašem okolí
           zrovna potřebuje pomoc.
         </p>
-        <label>
-          Chci pomáhat:
-          <select
-            className="map-select"
-            value={filter}
-            onChange={(event) => setFilter(event.target.value)}
-          >
-            {' '}
-            <option value="">Vyberte</option>
-            <option value="Materiální pomoc">materiálně</option>
-            <option value="Fyzická pomoc">fyzicky</option>
-            <option value="Odvoz">s odvozem</option>
-            <option value="Jiné">jinak</option>
-          </select>
-        </label>
+        <Select
+          text="Chci pomoct: "
+          labelClass="map-label"
+          selectClass="map-select"
+          value={filter}
+          onChange={(event) => setFilter(event.target.value)}
+        />
         <div className="map">
           <ReactMapGL
             {...viewport}

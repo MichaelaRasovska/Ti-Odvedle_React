@@ -17,6 +17,11 @@
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+.map-label {
+  margin-bottom: 1rem;
+}
+
+
 .map-heading {
   display: flex;
   align-items: center;

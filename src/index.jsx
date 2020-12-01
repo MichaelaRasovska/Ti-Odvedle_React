@@ -33,9 +33,9 @@ const App = () => {
           takouvou pomoc ochotný či schopný poskytnout? Mluvil/a jste s touto
           osobou a ta souhlasila s účastí v projektu Ti Odvedle? Super! V tom
           případě rovnou vyplňte náš formulář na vyžádání pomoci. Pokud nebude
-          cokoliv jasné, projděte si naše FAQ, kde se dozvíte, jak se s lidmi o
+          cokoliv jasné, projděte si naše FAQs, kde se dozvíte, jak se s lidmi o
           pomoci bavit i čeho se vyvarovat. Najdete zde i tipy, konkrétní
-          příklady a odpovědi na téma týkající se GDPR. Pojďme společně dělat
+          příklady pomoci a také odpovědi na téma týkající se GDPR. Pojďme společně dělat
           Česko lepším místem pro život!
         </p>
         <button id="sign" className="button-main" onClick={toggleModal}>

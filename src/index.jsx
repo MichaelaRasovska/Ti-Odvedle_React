@@ -40,7 +40,7 @@ const App = () => {
         </p>
         <button
           id="sign"
-          className="button-main button__cta2"
+          className="button-main button__cta"
           onClick={toggleModal}
         >
           Vyžádat pomoc

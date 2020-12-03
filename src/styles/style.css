@@ -110,6 +110,7 @@ a {
 h2 {
   font-size: 2em;
   line-height: 1.2;
+  font-weight: 400 !important;
 }
 
 .heading-help,

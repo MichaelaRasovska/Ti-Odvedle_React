@@ -7,11 +7,10 @@ export const Popup = ({ onClose, popupData }) => {
     <PopupGL
       latitude={popupData.latitude}
       longitude={popupData.longitude}
-      closeOnClick={false}
       onClose={onClose}
     >
-      <div className="popup-container" onClose={onClose}>
-        <div className='popup-person'>
+      <div className="popup-container" onClose={onclick}>
+        <div className="popup-person">
           <div className="popup-title">
             <h3>
               {popupData.name2.split(' ')[0]}, {popupData.age} let

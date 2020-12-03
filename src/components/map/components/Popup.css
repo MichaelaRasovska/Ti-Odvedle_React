@@ -19,11 +19,17 @@
   width: 100%;
   margin: 15px auto;
 }
+.popup-person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
+}
 
 .popup-description {
   font-size: 15px;
   line-height: 1rem;
-  text-align: justify;
+  text-align: center;
   width: 100%;
 }
 .popup-divider {
@@ -38,7 +44,7 @@
 
 .popup-mailto {
   text-align: center;
-  font-size: 13px;
+  font-size: 10px;
   font-weight: 300;
   line-height: 1rem;
   margin-bottom: 10px;

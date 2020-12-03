@@ -22,13 +22,19 @@ export const Popup = ({ onClose, popupData }) => {
           </div>
         </div>
         <div className="popup-mailto">
-          <a
-            href={`mailto:info@tiodvedle.cz?subject=${popupData.id}`}
-            target="_blank"
+          <button
+            className="popup-button"
+            onClick={(e) => {
+              window.location = `mailto:info@tiodvedle.cz?subject=${popupData.id}`;
+              e.preventDefault();
+            }}
           >
-            Máte zájem pomoct? Kontaktujte nás na email info@tiodvedle.cz s
-            předmětem ID: {popupData.id}.
-          </a>
+            Chci pomoct!
+          </button>
+          <p>
+            Máte zájem pomoct? Klikněte na tlačítko výše, nebo nás kontaktujte
+            na email info@tiodvedle.cz s předmětem ID: {popupData.id}.
+          </p>
         </div>
       </div>
     </PopupGL>

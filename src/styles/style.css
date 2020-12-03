@@ -48,50 +48,31 @@ a {
 /* menu end */
 
 /* buttons */
-.button-main {
-  height: 50px;
-  width: 160px;
-  margin: 0 40px 0 16px;
-  box-sizing: border-box;
-  border: transparent;
-  border-radius: 60px;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-  color: #ffffff;
-  background-color: #fa7269;
-  cursor: pointer;
-  outline: none;
-}
-
+.button-main,
 .button-help {
   height: 50px;
   width: 160px;
+  margin: 0 40px 0 0;
   box-sizing: border-box;
   border: transparent;
   border-radius: 60px;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   color: #ffffff;
-  background-color: #fa7269;
   cursor: pointer;
   outline: none;
-}
-.button__cta {
   padding: 10px 20px;
-  margin-left: 0px;
+}
+
+.button__cta {
+  background-color: #fa7269;
 }
 
 .button__cta2 {
-  padding: 10px 20px;
   background-color: #99ca6a;
 }
 
-.buttons__first-paragraph {
-  display: flex;
-  justify-content: flex-start;
-  text-align: center;
-}
-
+.buttons__first-paragraph,
 .buttons__help {
   display: flex;
   justify-content: flex-start;

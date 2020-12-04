@@ -43,6 +43,38 @@ a {
   justify-content: space-between;
   align-items: center;
   color: black;
+  text-shadow: 0 13px 26px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+/* menu hover effect */
+ul {
+  list-style: none;
+}
+li {
+  display: table-cell;
+  position: relative;
+  padding: 15px 0;
+}
+.menu__item {
+  color: #282828;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+}
+.menu__item:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #282828;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.menu__item:hover:after {
+  width: 100%;
+  left: 0;
 }
 
 /* menu end */

@@ -4,7 +4,7 @@
 .popup-container {
   position: relative;
   top: 2.5px;
-  border: 1px #fa7269 solid;
+  border: 1px #dde8fd solid;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,7 +34,7 @@
   width: 100%;
 }
 .popup-divider {
-  border: 1px #99ca6a solid;
+  border: 1px #dde8fd solid;
   width: 200px;
 }
 .filter {
@@ -64,9 +64,15 @@
   border-radius: 60px;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
-  color: black;
+  color: white;
   cursor: pointer;
   outline: none;
   padding: 10px 20px;
-  background-color: lightgray;
+  background-color: #fa7269;
+  box-shadow: 0 13px 26px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.popup-button:hover {
+  background-color: #fa7269;
+  color: #282828;
 }

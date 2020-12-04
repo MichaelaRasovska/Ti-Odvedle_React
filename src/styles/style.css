@@ -41,7 +41,6 @@ a {
 
 a:hover {
   color: #282828;
-  font-weight: 700;
 }
 
 .menu {
@@ -104,7 +103,6 @@ a:hover {
 .button__cta:hover {
   background-color: #fa7269;
   color: #282828;
-  font-weight: 700;
 }
 
 .button__cta2 {

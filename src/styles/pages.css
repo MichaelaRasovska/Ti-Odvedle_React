@@ -29,12 +29,16 @@ body {
   margin-bottom: 2rem;
 }
 
-.logo {
-  width: 300px;
-}
 a {
   text-decoration: none;
   color: #282828;
+
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #282828;
+  font-weight: 700;
 }
 
 .footer {
@@ -386,16 +390,6 @@ input:checked ~ .tab-content {
     text-align: center;
   }
 
-  a {
-    text-decoration: none;
-    color: #232323;
-
-    transition: color 0.3s ease;
-  }
-
-  a:hover {
-    color: tomato;
-  }
   /* Hamburger menu*/
   .menu {
     display: none;

@@ -32,9 +32,16 @@ body {
 .logo {
   width: 300px;
 }
+
 a {
   text-decoration: none;
   color: #282828;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #282828;
+  font-weight: 700;
 }
 
 .menu {
@@ -92,6 +99,12 @@ a {
 
 .button__cta {
   background-color: #fa7269;
+}
+
+.button__cta:hover {
+  background-color: #fa7269;
+  color: #282828;
+  font-weight: 700;
 }
 
 .button__cta2 {
@@ -367,17 +380,6 @@ h2 {
 
   body {
     overflow-x: hidden;
-  }
-
-  a {
-    text-decoration: none;
-    color: #232323;
-
-    transition: color 0.3s ease;
-  }
-
-  a:hover {
-    color: tomato;
   }
 
   /* Hamburger menu */

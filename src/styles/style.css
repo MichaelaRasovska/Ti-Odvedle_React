@@ -352,7 +352,7 @@ h2 {
   .buttons__help {
     flex-direction: column;
     justify-content: center;
-    margin: 0 5rem 5rem 5rem;
+    margin: 2rem 5rem 2rem 5rem;
   }
 
   .button__cta {

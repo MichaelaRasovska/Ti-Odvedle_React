@@ -250,7 +250,7 @@ export const Form = ({ onFormClose }) => {
             </div>
           </form>
           <button
-            className="button-main"
+            className="button-main button__cta "
             onClick={(e) => {
               e.preventDefault();
               handleSubmit();

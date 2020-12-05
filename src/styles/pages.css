@@ -57,7 +57,7 @@ a:hover {
   flex-basis: 300px;
   justify-content: space-between;
   align-items: center;
-  color: black;
+  color: #282828;
 }
 
 /* menu hover effect */
@@ -91,6 +91,7 @@ h1 {
   margin: 0;
   line-height: 2;
   text-align: center;
+  font-weight: 700;
 }
 
 /*FAQs*/
@@ -126,7 +127,7 @@ input {
 
 .tab {
   width: 100%;
-  color: white;
+  color: hsl(0, 0%, 16%);
   overflow: hidden;
 }
 .tab-label {
@@ -193,6 +194,10 @@ input:checked ~ .tab-content {
   align-items: center;
   margin: 0;
   padding: 0;
+}
+
+.h1-onas {
+  font-weight: 700;
 }
 
 .odkazy {

@@ -127,7 +127,7 @@ input {
 
 .tab {
   width: 100%;
-  color: hsl(0, 0%, 16%);
+  color: #282828;
   overflow: hidden;
 }
 .tab-label {
@@ -136,7 +136,8 @@ input {
   -webkit-box-pack: justify;
   justify-content: space-between;
   padding: 1em;
-  background: #fa7269;
+  background: white;
+  border: 1px solid #e1e1e1;
   font-weight: bold;
   cursor: pointer;
   /* Icon */

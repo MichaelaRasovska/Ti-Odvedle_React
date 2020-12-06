@@ -45,7 +45,8 @@ export const Map = () => {
         <h2 className="map-heading">Interaktivní mapa pomoci</h2>
         <p id="map-item" className="map__item">
           Objevte naší interaktivní mapu a podívejte se, kdo ve vašem okolí
-          zrovna potřebuje pomoc.
+          zrovna potřebuje pomoc. Jednoduše stačí kliknout na obrázek špendlíku
+          v mapě a hned uvidíte všechny informace. Tak směle do toho!
         </p>
         <Select
           text="Chci pomoct: "
@@ -77,10 +78,7 @@ export const Map = () => {
               );
             })}
             {popupData !== null && (
-              <Popup
-                popupData={popupData}
-                onClose={() => setPopupData(null)}
-              />
+              <Popup popupData={popupData} onClose={() => setPopupData(null)} />
             )}
           </ReactMapGL>
         </div>

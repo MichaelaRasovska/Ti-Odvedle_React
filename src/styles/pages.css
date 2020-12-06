@@ -201,60 +201,87 @@ input:checked ~ .tab-content {
   font-weight: 700;
 }
 
-.odkazy {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  margin-left: 15px;
-}
-.michaela,
-.kristyna {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.michaela-content,
-.kristyna-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-.img-holder {
-  width: auto;
-  display: inline-block;
+/* O nás new */
+
+.profile-body {
+  margin: 25px;
 }
 
-.michaela img,
-.kristyna img {
-  width: 200px;
-  height: auto;
-  border-radius: 50% 50% 50% 50%;
-  float: left;
-  margin-right: 30px;
-  margin-bottom: 30px;
+.profile {
+  margin-top: -55px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 25px;
+  background-color: white;
+  padding: 20px;
+  z-index: 0;
+  border: 2px solid lightgray;
 }
 
-.michaela p,
-.kristyna p {
-  width: 60%;
-  margin-left: 0px;
-  text-align: justify;
+.socialmedia {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.photo {
+  margin: 25px;
+}
+
+.image--cover {
+  width: 170px;
+  height: 170px;
+  border: lightgray 3px solid;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-top: -40px;
+}
+
+.username,
+.profession,
+.about {
+  text-align: center;
+  padding: 0;
+  margin: 1px;
+}
+
+.username {
+  font-size: 20pt;
+  margin: 2px;
+}
+
+.profession {
+  font-size: 14pt;
+}
+
+.about {
+  border-top: lightgray solid 1px;
+  padding: 10px;
+  font-size: 11pt;
+  margin: 5px;
 }
 
 .linkedin {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 70px;
   height: 70px;
   background: url(../../img/linkedin.svg);
 }
 .github {
-  display: block;
+  display: flex;
   width: 70px;
   height: 70px;
   background: url(../../img/github.svg);
+  margin-right: 10px;
 }
 
 #menuToggle {

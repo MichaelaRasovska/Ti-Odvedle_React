@@ -8,6 +8,7 @@ import {
   emailValidation,
   telValidation,
   requiredValidation,
+  descriptionValidation,
   confirmationValidation,
 } from './validations.js';
 import { Select } from './components/Select.jsx';
@@ -52,7 +53,7 @@ export const Form = ({ onFormClose }) => {
     if (requiredValidation(formData.city) !== null) {
       isValid = false;
     }
-    if (requiredValidation(formData.description) !== null) {
+    if (descriptionValidation(formData.description) !== null) {
       isValid = false;
     }
     if (requiredValidation(formData.helpType) !== null) {
@@ -69,7 +70,7 @@ export const Form = ({ onFormClose }) => {
       name2: nameValidation(formData.name2),
       street: requiredValidation(formData.street),
       city: requiredValidation(formData.city),
-      description: requiredValidation(formData.description),
+      description: descriptionValidation(formData.description),
       helpType: requiredValidation(formData.helpType),
       confirmation: confirmationValidation(formData.confirmation),
     });
@@ -174,7 +175,9 @@ export const Form = ({ onFormClose }) => {
                   }}
                 />
                 <Textarea
-                  validationMessage={requiredValidation(formData.description)}
+                  validationMessage={descriptionValidation(
+                    formData.description,
+                  )}
                   errorMessage={errorMessage.description}
                   title="Popište, proč chcete dané osobě pomoci, v jaké situaci se
                   osoba nachází a jakou formu pomoci by potřebovala: *"

@@ -31,22 +31,19 @@ export const telValidation = (telephone) => {
   return 'Vložte prosím tel. číslo bez mezer';
 };
 
-// export const ageValidation = (age) => {
-//   if (!age) {
-//     return 'Age is required';
-//   }
-//   if (age < 18) {
-//     return 'Age must be at least 18';
-//   }
-//   if (age > 99) {
-//     return 'Age must be under 99';
-//   }
-//   return null;
-// };
-
 export const requiredValidation = (value) => {
   if (value.trim() === '') {
     return 'Musí být vyplněno';
+  }
+  return null;
+};
+
+export const descriptionValidation = (value) => {
+  if (value.trim() === '') {
+    return 'Musí být vyplněno';
+  }
+  if (value.length > 200) {
+    return `Maximální délka popisu je 200 znaků.`;
   }
   return null;
 };

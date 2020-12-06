@@ -136,10 +136,11 @@ input {
   -webkit-box-pack: justify;
   justify-content: space-between;
   padding: 1em;
-  background: white;
+  background: #fa7269;
   border: 1px solid #e1e1e1;
-  font-weight: bold;
   cursor: pointer;
+  color: white;
+  font-weight: 200;
   /* Icon */
 }
 .tab-label:hover {
@@ -532,7 +533,6 @@ input:checked ~ .tab-content {
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    text-align: center;
   }
 
   @media screen and (max-width: 768px) {

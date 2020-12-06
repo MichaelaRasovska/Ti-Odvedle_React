@@ -52,6 +52,7 @@ export const Map = () => {
           text="Chci pomoct: "
           labelClass="map-label"
           selectClass="map-select"
+          selectText="jakkoliv"
           value={filter}
           onChange={(event) => setFilter(event.target.value)}
         />

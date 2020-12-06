@@ -29,7 +29,12 @@ export const Popup = ({ onClose, popupData }) => {
               e.preventDefault();
             }}
           >
-            Chci pomoct!
+            <a
+              href={`mailto:info@tiodvedle.cz?subject=${popupData.id}`}
+              target="_blank"
+            >
+              Chci pomoct!
+            </a>
           </button>
           <p>
             Máte zájem pomoct? Klikněte na tlačítko výše, nebo nás kontaktujte

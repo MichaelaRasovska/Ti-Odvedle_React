@@ -190,6 +190,7 @@ export const Form = ({ onFormClose }) => {
                   text="Osoba potřebuje pomoct: *"
                   labelClass="form-label"
                   selectClass="form-select"
+                  selectText="vyberte"
                   onChange={(e) => {
                     setFormData({ ...formData, helpType: e.target.value });
                     setErrorMessage({ ...errorMessage, helpType: '' });

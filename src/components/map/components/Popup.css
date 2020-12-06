@@ -76,3 +76,7 @@
   background-color: #fa7269;
   color: #282828;
 }
+.popup-button a {
+  width: 100%;
+  height: 100%;
+}

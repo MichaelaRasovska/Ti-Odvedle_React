@@ -8,6 +8,7 @@ export const Select = ({
   text,
   labelClass,
   selectClass,
+  selectText
 }) => {
   const [fieldChanged, setFieldChanged] = useState(false);
 
@@ -28,7 +29,7 @@ export const Select = ({
     <label className={labelClass}>
       {text}
       <select className={selectClass} value={value} onChange={onSelectChange}>
-        <option value="">vyberte</option>
+  <option value="">{selectText}</option>
         <option value="Materiální pomoc">materiálně</option>
         <option value="Fyzická pomoc">fyzicky</option>
         <option value="Odvoz">s odvozem</option>

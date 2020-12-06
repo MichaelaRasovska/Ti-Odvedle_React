@@ -25,13 +25,8 @@ export const Checkbox = ({
 
   return (
     <>
-      <label>
-        <input
-          className="form-checkbox"
-          type="checkbox"
-          checked={checked}
-          onChange={onClickChange}
-        />
+      <label className="form-checkbox">
+        <input type="checkbox" checked={checked} onChange={onClickChange} />
         {text}
       </label>
       <span className="form-error">{message}</span>

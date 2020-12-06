@@ -79,4 +79,6 @@
 .popup-button a {
   width: 100%;
   height: 100%;
+  color: white;
+  padding: 12px 15px;
 }

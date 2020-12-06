@@ -199,13 +199,10 @@ input:checked ~ .tab-content {
 
 .h1-onas {
   font-weight: 700;
+  margin-bottom: 40px;
 }
 
 /* O nás new */
-
-.profile-body {
-  margin: 25px;
-}
 
 .profile {
   margin-top: -55px;

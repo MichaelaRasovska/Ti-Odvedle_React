@@ -116,15 +116,15 @@ export const Form = ({ onFormClose }) => {
           <h2 className="form-title">Vyžádat pomoc</h2>
           <p>
             Děkujeme, že vám vaše okolí není lhostejné! Prosíme vyplňte náš
-            formulář níže a nezapomeňte přesně popsat, jakou formu pomoci osoba,
-            rodina či jiný subjekt potřebuje a proč. Správný popis bude klíčový
+            formulář níže a nezapomeňte přesně popsat, jakou formu pomoci osoba či
+            rodina potřebuje a proč. Správný popis bude klíčový
             při hledání lidí, kteří by pomoc byli schopni poskytnout.
           </p>
           <p>
             Poté, co formulář odešlete, vaši žádost zkontrolujeme a pokud bude
             všechno v pořádku, křestní jméno osoby, její věk a popis pomoci
             zadáme do naší mapy. Nebojte, v mapě neuvádíme žádné identifikační
-            údaje, které by uvedenou osobu nebo vás mohly přesně identifikovat.
+            údaje, které by uvedenou osobu nebo vás mohly přesně identifikovat a špendlíky na mapě se zobrazují pouze orientačně.
             Vyplněné údaje o osobě, které chcete pomoct, slouží výhradně pro
             účely zobrazování mapy. Žádné údaje vyplněné ve formuláři nebudou
             dále distribuovány třetím stranám, ani využívány k obchodním účelům.

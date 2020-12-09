@@ -31,13 +31,12 @@ export const Map = () => {
     });
   }, []);
 
-  //prep for filtering only approved data
-  //const dataApproved = peopleData.filter((person) => person.approved === true);
-  //console.log(dataApproved);
-
+  //filtering only approved data
+  const dataApproved = peopleData.filter((person) => person.approved === true);
+  //checking chosen filter
   const dataFiltered = filter
-    ? peopleData.filter((person) => person.helpType === filter)
-    : peopleData;
+    ? dataApproved.filter((person) => person.helpType === filter)
+    : dataApproved;
 
   return (
     <>

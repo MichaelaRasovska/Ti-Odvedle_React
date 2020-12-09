@@ -13,7 +13,7 @@ export const Popup = ({ onClose, popupData }) => {
         <div className="popup-person">
           <div className="popup-title">
             <h3>
-              {popupData.name2.split(' ')[0]}, {popupData.age} let
+              {popupData.name2}, {popupData.age} let
             </h3>
           </div>
           <div className="popup-divider"></div>

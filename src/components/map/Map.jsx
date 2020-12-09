@@ -20,7 +20,7 @@ export const Map = () => {
   const [popupData, setPopupData] = useState(null);
 
   useEffect(() => {
-    return database.collection('people').onSnapshot((query) => {
+    return database.collection('public').onSnapshot((query) => {
       setPeopleData(
         query.docs.map((doc) => {
           const data = doc.data();

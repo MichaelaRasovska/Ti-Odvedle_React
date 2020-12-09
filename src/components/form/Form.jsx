@@ -80,8 +80,17 @@ export const Form = ({ onFormClose }) => {
   const handleSubmit = async () => {
     if (validateForm() === true) {
       const coordinates = await getCoordinates(formData.street, formData.city);
-      database.collection('people').add({
+      const peopleDocRef = await database.collection('people').add({
         ...formData,
+        latitude: coordinates[1],
+        longitude: coordinates[0],
+      });
+      database.collection('public').doc(peopleDocRef.id).set({
+        name2: formData.name2.split(' ')[0],
+        age: formData.age,
+        helpType: formData.helpType,
+        description: formData.description,
+        approved: formData.approved,
         latitude: coordinates[1],
         longitude: coordinates[0],
       });

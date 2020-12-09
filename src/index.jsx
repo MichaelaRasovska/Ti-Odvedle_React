@@ -30,7 +30,7 @@ const App = () => {
         <h2 className="heading-form">Vím komu pomoci</h2>
         <p>
           Víte o někom, kdo potřebuje pomoct, ale neznáte nikoho, kdo je
-          takouvou pomoc ochotný či schopný poskytnout? Mluvil/a jste s touto
+          takovou pomoc ochotný či schopný poskytnout? Mluvil/a jste s touto
           osobou a ta souhlasila s účastí v projektu Ti Odvedle? Super! V tom
           případě rovnou vyplňte náš formulář na vyžádání pomoci. Pokud nebude
           cokoliv jasné, projděte si naše FAQs, kde se dozvíte, jak se s lidmi o

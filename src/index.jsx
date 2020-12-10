@@ -29,14 +29,14 @@ const App = () => {
       <section id="full-bleed" className="full-bleed">
         <h2 className="heading-form">Vím komu pomoci</h2>
         <p>
-          Víte o někom, kdo potřebuje pomoct, ale neznáte nikoho, kdo je
-          takovou pomoc ochotný či schopný poskytnout? Mluvil/a jste s touto
-          osobou a ta souhlasila s účastí v projektu Ti Odvedle? Super! V tom
-          případě rovnou vyplňte náš formulář na vyžádání pomoci. Pokud nebude
-          cokoliv jasné, projděte si naše FAQs, kde se dozvíte, jak se s lidmi o
-          pomoci bavit i čeho se vyvarovat. Najdete zde i tipy, konkrétní
-          příklady pomoci a také odpovědi na téma týkající se GDPR. Pojďme
-          společně dělat Česko lepším místem pro život!
+          Víte o někom, kdo potřebuje pomoct, ale neznáte nikoho, kdo je takovou
+          pomoc ochotný či schopný poskytnout? Mluvil/a jste s touto osobou a ta
+          souhlasila s účastí v projektu Ti Odvedle? Super! V tom případě rovnou
+          vyplňte náš formulář na vyžádání pomoci. Pokud nebude cokoliv jasné,
+          projděte si naše FAQs, kde se dozvíte, jak se s lidmi o pomoci bavit i
+          čeho se vyvarovat. Najdete zde i tipy, konkrétní příklady pomoci a
+          také odpovědi na téma týkající se GDPR. Pojďme společně dělat Česko
+          lepším místem pro život!
         </p>
         <button
           id="sign"
@@ -49,18 +49,18 @@ const App = () => {
       </section>
       <Map />
       <footer>
-        <div class="footer">
+        <div className="footer">
           <a
-            class="footer__item-saying"
+            className="footer__item-saying"
             href="https://www.linkedin.com/in/krist%C3%BDna-nedv%C4%9Bdov%C3%A1-9292b0a8/"
             target="_blank"
             rel="noopener noreferrer"
           >
             Design by Kristýna Nedvědová
           </a>
-          <a class="footer__item-copyright">Copyright ©2020 TiOdvedle.cz</a>
+          <a className="footer__item-copyright">Copyright ©2020 TiOdvedle.cz</a>
           <a
-            class="footer__item-illustrations"
+            className="footer__item-illustrations"
             href="http://www.freepik.com"
             target="_blank"
             rel="noopener noreferrer"
